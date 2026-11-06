@@ -9,7 +9,8 @@
 
 | Feedback | File to edit |
 |---|---|
-| "Wrong 4 images for a command" / "want a different image" | `knowledge/image-sets.md` |
+| "A command misses something" / "wrong OPD vs surgical choice" | `knowledge/command-coverage.md` |
+| "Wording too hard / too simple" | `knowledge/modes.md` |
 | "Images look inconsistent / too cartoonish / wrong colours" | `knowledge/visual-style-guide.md` |
 | "Labels misspelled / cluttered" | `knowledge/visual-style-guide.md` (labels) + relevant template |
 | "This image type is always wrong" | `examples/image-prompt-templates.md` |

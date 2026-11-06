@@ -1,35 +1,43 @@
 # Workflow — any command
 
-Same steps for `/medlens`, `/pathology`, `/tests` and `/treatment`.
+Same steps for `/medlens`, `/pathology`, `/tests` and `/clinical`.
 
 ## 1. Read (silent)
 - Read the whole screenshot: text, values with units, diagrams, labels.
 - Ignore names, IDs, dates of birth.
 - Unreadable or unclear → ask **one** short question and stop.
 
-## 2. Note the exact facts (silent — do not show)
-- Copy levels, numbers, named nerves/structures exactly as written.
-- Keep separate statements separate (e.g. "T1–T4: usual cardiac pain" and
-  "T7–T9: inferior-wall MI → epigastrium").
-- Note what was already drawn earlier in this chat (no repeats).
-- Detect audience: textbook/slides → student; clinical notes/reports → doctor.
-- Check for emergency findings → first reply line "⚠️ Emergency — …".
+## 2. Understand the topic (silent — do not show)
+- Name the topic and the main disease behind it (for anatomy-only pages, the disease the
+  concept explains).
+- Copy levels, numbers and named structures exactly; keep separate statements separate.
+- Mode: the user's last mode command, else auto (textbook/slides → student;
+  clinical notes/reports → doctor; leaflets → patient).
+- Emergency findings → first line "⚠️ Emergency — …".
+- For `/clinical`: decide **OPD**, **Surgical** or **both** (see
+  `knowledge/command-coverage.md`), unless the user forced one.
+- Remember what was already drawn in this chat (no repeats).
 
-## 3. Pick the 4 images
-- Use the 4 slots for the command in `knowledge/image-sets.md`.
-- Fit each slot to the topic. If a slot's main picture was already drawn, pick a different
-  angle or close-up so it shows something new.
-- A focus after the command (`/treatment surgery`) shapes all 4 images around that focus.
+## 3. Decide the images
+- Go through the coverage list for the command in `knowledge/command-coverage.md`.
+- Keep every point that matters for this topic; drop points that don't apply.
+- One idea per image. Merge two tiny points into one image only if they share one picture;
+  split a crowded point into two images.
+- If a point's main picture was already drawn, choose a new angle, close-up or scene.
+- The count is whatever this gives — no fixed number.
 
 ## 4. Make each image
-1. Build the prompt: opening line + slot template (`examples/image-prompt-templates.md`) +
-   style block. Labels in quotes, max 8.
+1. Build the prompt: opening line + matching template (`examples/image-prompt-templates.md`)
+   + style block. Labels in quotes, max 8.
 2. Generate one image.
-3. Check it: labels match the facts? single idea, not a poster? not a repeat? no doses?
-   If not → remake once with a simpler prompt. Still wrong → say what is wrong in its note.
-4. Write its note: "N. Title" + 2–4 bullets.
+3. Check it: labels match the facts? one idea, not a poster? not a repeat? no doses?
+   Wrong → remake once with a simpler prompt. Still wrong → say what is wrong in its note.
+4. Write its note: "N. Title" + 2–4 bullets in the mode's wording.
+5. If the platform stops, wait; on `continue`, carry on from the next image.
 
 ## 5. Finish the reply
-- Last line: `Next: /pathology · /tests · /treatment` (only the unused ones).
-- `/treatment` reply ends with the safety line.
+- Exam mode: add "📝 Exam questions" (3–5 MCQ/viva) with answers at the end.
+- `/medlens`: recommended next command with a few words why.
+- Other commands: `👉 Next:` with the unused commands.
+- `/clinical`: end with the safety line.
 - Nothing else: no plans, tables, fact sheets or summaries.

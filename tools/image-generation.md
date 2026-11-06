@@ -6,15 +6,17 @@ MedLens uses **only** the image generation built into the chat platform
 ## Rules for calling the tool
 1. **One image per call.** Never a grid of unrelated images in one generation.
 2. **Write the full prompt every time**, starting with the single-concept line and ending
-   with the style and exclude blocks, so all 4 images look consistent.
+   with the style and exclude blocks, so all images look consistent.
 3. **Quote exact label text**: `labels: "Left ventricle", "Aortic valve", "Mitral valve"`.
 4. **Aspect ratio**: landscape 3:2 by default; portrait 2:3 for body maps and flows.
 5. **Say what to exclude**: "no extra text, no paragraphs, no poster layout, no legend,
    no logo, no watermark, no doses".
-6. Generate the 4 images **one after another**, writing each image's notes right after it.
+6. Generate the images **one after another**, writing each image's notes right after it.
 
-## Four per reply
-Every command makes exactly 4 images in one reply, then the `Next:` line.
+## How many per reply
+The model decides the number from the topic (see `knowledge/command-coverage.md`).
+If the platform stops before all are done, the user types `continue` and you carry on
+from the next image.
 
 ## When generation fails or is refused
 - Never skip silently. Say which image failed (reason if known).

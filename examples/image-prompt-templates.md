@@ -8,14 +8,15 @@ Fill the `[brackets]`. **Start every prompt with:**
 Take every label exactly from the screenshot (or well-established knowledge). Always append
 the **global style block** and **exclude line**:
 
-## Which template for which slot
+## Which template for which point
 
-| Command | Slot 1 | Slot 2 | Slot 3 | Slot 4 |
-|---|---|---|---|---|
-| `/medlens` | 1 Normal anatomy | 2 Physiology or 4 Pathogenesis (the source's process) | 6 Clinical features | Differential, or the best-fitting template for the key point |
-| `/pathology` | 3 Causes | 4 Pathogenesis | 5 Pathology | 12 Complications |
-| `/tests` | 6 Clinical features (signs) or 9 scene | 7 Investigations (test 1) | 7 Investigations (test 2) | 8 Diagnosis flow |
-| `/treatment` | 10x Treatment ladder | 10 Pharmacology | 11 Procedure (or 10 for 2nd drug class) | 13 Follow-up + 14 Patient cards |
+| Command | Points → templates |
+|---|---|
+| `/medlens` | Anatomy → 1 · Function → 2 · Root cause & starting point → S1 · Spread / first changes → 4 · First symptoms → 6 · Key point → best fit |
+| `/pathology` | Causes → 3 · Mechanism → 4 · Gross → 5 · Histology → S2 · Types/stages → Differential grid · Complications → 12 |
+| `/tests` | Exam signs → S3 · Bedside/labs/imaging → 7 · Scores & diagnosis path → 8 · Differentials → Differential grid |
+| `/clinical` OPD | Consultation flow → 8 · Treatment ladder → 10x · Medicine mechanism → 10 · Lifestyle/follow-up → 13 · Counselling → 14 |
+| `/clinical` Surgical | Indications → 8 · Pre-op → S4 · Operative steps → 11 · Post-op care → S5 · Complications → 12 |
 
 > **STYLE:** Professional medical education illustration, high detail, clean composition,
 > soft neutral background, consistent colour palette (normal green, disease red, treatment
@@ -150,6 +151,49 @@ Landscape 3:2. STYLE. EXCLUDE.
 ```
 
 ---
+
+---
+
+## Extra templates (v3)
+
+### S1. Root cause & starting point
+```
+Photorealistic 3D anatomical render of the [ORGAN/REGION] in its anatomical context, with
+the exact site where [DISEASE] begins highlighted in red: [e.g. faecolith obstructing the
+appendix lumen]. Surrounding structures faded. Labels: "[starting site]", "[root cause]",
+"[neighbouring structure]". Title: "Where [disease] starts". Landscape 3:2. STYLE. EXCLUDE.
+```
+
+### S2. Histopathology
+```
+Medical histology micrograph-style illustration, [stain e.g. H&E], showing [FINDING e.g.
+neutrophil infiltration of the muscularis propria]. Circular field of view. Labels:
+"[feature 1]", "[feature 2]", "[feature 3]". Title: "[Disease]: histology".
+Landscape 3:2. STYLE. EXCLUDE.
+```
+
+### S3. Clinical examination sign
+```
+Photorealistic clinic or bedside scene: a clinician performing [SIGN/MANOEUVRE e.g. palpation
+at McBurney's point] on a draped adult patient lying [position]. Hand position clearly
+visible; small anatomical overlay showing the landmark. Labels: "[sign name]",
+"[landmark]", "[positive finding]". Non-graphic, professional. Landscape 3:2. STYLE. EXCLUDE.
+```
+
+### S4. Pre-operative workflow
+```
+Clean flat vector horizontal workflow, [4–6] icon steps left to right: "[Assessment]",
+"[Bloods / imaging]", "[Consent]", "[Fasting]", "[Antibiotic prophylaxis]", "[Site marking]".
+Blue icons, numbered circles. Title: "Before surgery". Landscape 3:2. STYLE. EXCLUDE.
+```
+
+### S5. Post-operative care
+```
+Photorealistic modern surgical ward: nurse checking a recovering patient after [OPERATION];
+visible: [observations monitor, IV line, wound dressing, early mobilisation]. Labels:
+"[Pain control]", "[Observations]", "[Wound check]", "[Mobilise early]". Non-graphic.
+Landscape 3:2. STYLE. EXCLUDE.
+```
 
 ## Redo
 `/redo N [fix]`: start with "Revise previous image: [fix]." then repeat the full prompt.

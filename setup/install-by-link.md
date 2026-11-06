@@ -13,7 +13,8 @@ rest of this conversation. SKILL.md is the main instruction; safety-rules.md ove
 everything else.
 
 https://raw.githubusercontent.com/<your-username>/medlens/main/SKILL.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/image-sets.md
+https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/command-coverage.md
+https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/modes.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/visual-style-guide.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/safety-rules.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/workflows/full-run.md

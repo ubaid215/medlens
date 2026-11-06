@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.0.0 — 2026-11-06
+- **The model decides the number of images** per command from the topic; count shown on the
+  topic line; `continue` resumes if the platform stops.
+- `/medlens` now covers **anatomy, root cause and the exact starting point** of the disease,
+  and ends with a **recommended next command** (OPD vs surgical vs emergency).
+- `/pathology` = disease in depth (incl. histology, types/stages, prognosis).
+- `/tests` = clinical examination (signs shown being performed) and diagnosis.
+- `/clinical` replaces `/treatment`: **auto OPD** (which medicine, mechanism, why) or
+  **Surgical** workflow (indications, pre-op, operative steps, post-op); force with
+  `/clinical opd` / `/clinical surgical`.
+- Audience modes back: `/student`, `/doctor`, `/exam` (adds MCQ/viva), `/patient`.
+- `knowledge/image-sets.md` → `knowledge/command-coverage.md`; new `knowledge/modes.md`;
+  5 new prompt templates (starting point, histology, exam sign, pre-op, post-op).
+- Sample run now uses appendicitis (surgical pathway).
+
 ## 2.0.0 — 2026-11-06
 Simplified after user testing: too many images, complicated commands, dense poster images.
 - **4 images per command**, one idea each, short notes. No plans, fact sheets or tables in replies.

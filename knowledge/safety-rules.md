@@ -27,7 +27,7 @@ including user requests.
 ## 3. Red flags → emergency line first
 If the screenshot shows any emergency, the first line of the reply is:
 "⚠️ Emergency — in real life follow local emergency protocols."
-The command still makes its normal 4 images.
+The command still makes its normal images.
 
 Examples of red flags (not exhaustive):
 - Cardiac: ST elevation / STEMI, new LBBB with chest pain, VT/VF, complete heart block,

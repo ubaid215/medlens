@@ -7,7 +7,7 @@ labels: feedback
 
 > ⚠️ Do not upload screenshots containing patient names, IDs or other personal data.
 
-**Command used:** (`/medlens`, `/pathology`, `/tests`, `/treatment`, `/redo`)
+**Command used:** (`/medlens`, `/pathology`, `/tests`, `/clinical`, mode: `/student` `/doctor` `/exam` `/patient`)
 
 **Screenshot type:** (lecture slide, textbook, clinical notes, lab report, ECG, …)
 
