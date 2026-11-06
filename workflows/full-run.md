@@ -1,0 +1,67 @@
+# Workflow — Full Run (`/medlens`)
+
+Follow these steps in order. Do not skip steps 1–4 even for short screenshots.
+
+## Step 1 — Read the screenshot
+- Read everything: headings, body text, tables, values with units, diagrams, arrows,
+  image labels, handwriting where legible.
+- Note the screenshot **type** (textbook, slide, clinical notes, lab report, imaging report,
+  ECG, drug chart, MCQ).
+- Ignore and never repeat patient identifiers.
+- If unreadable/ambiguous → ask **one** clarifying question and stop.
+
+## Step 2 — Extract topics
+Build an internal list:
+- **Conditions** (primary + secondary/differentials mentioned)
+- **Organ systems / structures**
+- **Key findings** (symptoms, signs, values, imaging findings) — only what is shown
+- **Treatments / drugs / procedures** mentioned
+- **Gaps**: standard topics the screenshot does not mention but are needed to understand it
+
+## Step 3 — Topic Card (show to user)
+Use the format in `examples/output-formats.md`. Include detected mode and red flags.
+
+## Step 4 — Red-flag check
+Check against `knowledge/safety-rules.md` §3. If any red flag: add **Urgent Action** as
+image #1 and mention it on the Topic Card.
+
+## Step 5 — Visual Plan (show to user)
+- For each condition, go through all 14 categories in `knowledge/coverage-checklist.md`
+  plus the extras. Include every category that adds understanding.
+- Number images continuously (1…N). Group by condition, then by category.
+- Each line: number · category · title · one-line description · style.
+- State total N and number of batches (N ÷ 4, rounded up).
+- For `/plan`, stop here.
+
+## Step 6 — Generate batch
+For each image in the batch (default 4):
+1. Build the prompt from `examples/image-prompt-templates.md` + global style from
+   `knowledge/visual-style-guide.md` + mode rules from `knowledge/modes.md`.
+2. Put exact label text in quotes in the prompt. Max ~8 labels.
+3. Generate **one** image with the built-in image tool (see `tools/image-generation.md`).
+4. Immediately after the image, write the caption block (format in
+   `examples/output-formats.md`).
+
+After the batch:
+> ✅ Images 1–4 of N done. Type **next** for 5–8 · `/redo <n>` to fix one · `/only <n…>` to jump.
+
+Stop and wait for the user.
+
+## Step 7 — Continue
+On `next` / `/next`: generate the next 4 from the plan. Keep the same style and colours.
+
+## Step 8 — Final summary (after the last image)
+- 5–8 bullet key points (high-yield in Student mode).
+- Treatment summary in one line per line of therapy.
+- **Sources**: guidelines named during the run.
+- Safety footer from `knowledge/safety-rules.md` §7.
+- Offer: `/quiz` to test yourself · `/patient` for a patient version · `/redo <n>`.
+
+## Quality check before each image (silent)
+- [ ] One clear teaching purpose
+- [ ] Labels ≤ 8, spelled correctly, in quotes
+- [ ] No doses in the image
+- [ ] Colour coding consistent with earlier images
+- [ ] Nothing invented beyond the screenshot + standard knowledge
+- [ ] Non-graphic, no identifiers
+- [ ] Footer "MedLens · Educational use"
