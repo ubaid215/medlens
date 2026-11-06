@@ -13,17 +13,16 @@ rest of this conversation. SKILL.md is the main instruction; safety-rules.md ove
 everything else.
 
 https://raw.githubusercontent.com/<your-username>/medlens/main/SKILL.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/coverage-checklist.md
+https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/image-sets.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/visual-style-guide.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/safety-rules.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/modes.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/workflows/full-run.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/workflows/commands.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/tools/image-generation.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/examples/image-prompt-templates.md
 https://raw.githubusercontent.com/<your-username>/medlens/main/examples/output-formats.md
 
-When you have read them, reply only: "✅ MedLens installed. Send a screenshot or type /help."
+When you have read them, reply only with the welcome text from output-formats.md.
 ```
 
 ## Shorter version (if ChatGPT can open the repository page)

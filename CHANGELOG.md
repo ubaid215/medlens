@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0 — 2026-11-06
+Simplified after user testing: too many images, complicated commands, dense poster images.
+- **4 images per command**, one idea each, short notes. No plans, fact sheets or tables in replies.
+- New simple commands: `/medlens` (explain) · `/pathology` (what goes wrong) · `/tests`
+  (diagnosis) · `/treatment` (which medicine or surgery, and why) · `/redo N` · `/help`.
+- Removed: `/plan`, `/next`, `/only`, `/add`, `/summary`, `/student`, `/doctor`, `/quiz`,
+  `/patient` (audience is now detected automatically).
+- New `knowledge/image-sets.md` (the 4 slots per command); removed `coverage-checklist.md`
+  and `modes.md`.
+- Kept from 1.2: no posters, no repeats, exact facts, no doses inside images.
+- Emergency findings now give a warning line instead of an extra image.
+
 ## 1.2.0 — 2026-11-06
 Fixes from the first real ChatGPT test (cardiac pain page): only 4 images, poster-style
 images repeating the same heart/spine/patient, wrong spinal levels (T2–T9, T1–T5), no treatment.

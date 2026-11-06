@@ -1,11 +1,9 @@
 # MedLens 🩺
 
-**Medical screenshot → complete visual explanation.**
+**Medical screenshot → 4 clear images per command.**
 
-Share a screenshot of a textbook page, lecture slide, clinical notes, lab report or imaging
-report. MedLens reads it, finds every topic in it, and generates a **full set of educational
-images**: 3D anatomy, pathology, clinical features, investigations, diagnosis flow, treatment,
-drug mechanisms, procedures, complications and patient counselling.
+Send a screenshot of a textbook page, lecture slide, clinical notes or a report. Type a
+command and MedLens makes **4 simple images**, one idea each, with short notes.
 
 Built for **medical students** and **doctors**. Runs inside ChatGPT with its built-in image
 generation — **no API key needed**.
@@ -15,60 +13,39 @@ generation — **no API key needed**.
 
 ---
 
-## Install
+## Use
 
-### Option A — Custom GPT (recommended, most reliable)
-1. In ChatGPT go to **Explore GPTs → Create → Configure**.
-2. Follow [`setup/custom-gpt-setup.md`](setup/custom-gpt-setup.md):
-   paste `instructions/gpt-instructions.md` into **Instructions**,
-   upload every file in `knowledge/`, `workflows/`, `tools/` and `examples/` as **Knowledge**,
-   turn on **Image Generation**.
-3. Save. Share the GPT link with users.
-
-### Option B — Paste the GitHub link into any ChatGPT chat
-Copy the prompt from [`setup/install-by-link.md`](setup/install-by-link.md), replace
-`<your-username>` with your GitHub username, and paste it into a new chat.
-ChatGPT reads the skill files from GitHub and follows them **for that chat**.
-(Needs web access in ChatGPT. Option A is more reliable because the files are always loaded.)
-
-### Option C — Claude (and other platforms that support Agent Skills)
-Zip the repository (`SKILL.md` must be inside the top folder of the zip) and upload it in
-Claude: **Settings → Capabilities → Skills → Upload skill**. Skill upload depends on your
-Claude plan.
-
-Claude has no built-in image generator, so MedLens runs in **Claude mode** there:
-
-| Image type | In Claude mode |
+| Command | 4 images about |
 |---|---|
-| Flowcharts, timelines, treatment ladders, body maps, drug mechanisms, ECG strips, lab charts, risk factors, differentials, urgent cards, patient cards | **Drawn directly** by Claude (SVG) |
-| 3D anatomy, 3D pathology, realistic clinical/OR scenes | Labelled **schematic drawn** + a **ready-to-paste prompt** for any image generator |
+| `/medlens` | **Explain** — structure · how it works · what the patient feels · key point |
+| `/pathology` | **What goes wrong** — causes · disease process · healthy vs diseased · complications |
+| `/tests` | **Diagnosis** — bedside signs · key test · second test · diagnosis path |
+| `/treatment` | **What we do and why** — treatment plan · main medicine · procedure/surgery · recovery |
+| `/redo 2` | Remake image 2 (add what to fix: `/redo 2 bigger labels`) |
+| `/help` | Command list |
 
-Everything is collected in one HTML page (artifact) that grows with each `/next`, so you end
-up with a complete visual study sheet.
-
-### Which option gives what
-
-| Platform | Result |
-|---|---|
-| ChatGPT Custom GPT | All images generated, including 3D and realistic |
-| ChatGPT install-by-link | Same, for one chat |
-| Claude skill | ~75% drawn as diagrams, 3D/realistic as schematic + prompt |
+Start with `/medlens`, then use the others in any order. Add a focus if you like:
+`/treatment surgery`.
 
 ---
 
-## Use
+## Install
 
-Attach a screenshot and type:
+### Option A — Custom GPT (recommended)
+Follow [`setup/custom-gpt-setup.md`](setup/custom-gpt-setup.md): paste
+`instructions/gpt-instructions.md` into **Configure → Instructions**, upload the knowledge
+files, turn on **Image Generation**.
 
-| Command | What it does |
-|---|---|
-| `/medlens` | Full run: topic card → visual plan → all images (in batches) |
-| `/plan` | Show the plan only |
-| `/next` | Next batch of images |
-| `/only 3 7 10` | Only those images |
-| `/redo 5` | Regenerate image 5 (add feedback after the number) |
-| `/student` · `/doctor` · `/quiz` · `/patient` | Switch mode |
-| `/help` | Command list |
+### Option B — Paste the GitHub link into a ChatGPT chat
+Use the prompt in [`setup/install-by-link.md`](setup/install-by-link.md). Works for that chat
+only and needs web access.
+
+### Option C — Claude
+Zip the repository (`SKILL.md` inside the top folder) and upload it in
+**Settings → Capabilities → Skills**. Claude has no image generator, so it runs in
+**Claude mode**: diagrams (flows, body maps, mechanisms, ECGs, treatment plans) are drawn
+directly; 3D anatomy and realistic hospital scenes come as a labelled sketch plus a prompt
+to paste into any image generator.
 
 ---
 
@@ -76,50 +53,45 @@ Attach a screenshot and type:
 
 ```
 medlens/
-├── SKILL.md                         1. Instructions (entry point)
-├── instructions/gpt-instructions.md 1. Instructions (Custom GPT version, < 8000 chars)
-├── knowledge/                       2. Knowledge
-│   ├── coverage-checklist.md          which images to make
+├── SKILL.md                         Instructions (entry point)
+├── instructions/gpt-instructions.md Instructions for the Custom GPT (< 8000 chars)
+├── knowledge/
+│   ├── image-sets.md                  the 4 images for each command
 │   ├── visual-style-guide.md          how images look
-│   ├── safety-rules.md                medical guardrails + red flags
-│   └── modes.md                       student / doctor / quiz / patient
-├── workflows/                       3. Workflows
-│   ├── full-run.md                    the /medlens pipeline
-│   └── commands.md                    every command in detail
-├── tools/                           4. Tools
-│   ├── image-generation.md            built-in image tool, batching, limits
-│   └── claude-rendering.md            Claude mode: drawn SVG diagrams + prompts
-├── examples/                        5. Examples & output formats
-│   ├── image-prompt-templates.md      a template per image category
-│   ├── svg-templates.md               SVG diagram templates + HTML page shell
-│   ├── output-formats.md              topic card, plan, captions, summary
-│   ├── sample-run.md                  full worked example
-│   └── test-cardiac-pain.md           regression test + pass criteria
+│   └── safety-rules.md                medical guardrails
+├── workflows/
+│   ├── full-run.md                    steps for any command
+│   └── commands.md                    command details
+├── tools/
+│   ├── image-generation.md            built-in image tool rules
+│   └── claude-rendering.md            Claude mode
+├── examples/
+│   ├── image-prompt-templates.md      prompt per image slot
+│   ├── svg-templates.md               SVG diagrams for Claude mode
+│   ├── output-formats.md              exact reply format
+│   ├── sample-run.md                  worked example
+│   └── test-cardiac-pain.md           regression test
 ├── setup/
 │   ├── custom-gpt-setup.md
 │   └── install-by-link.md
-├── feedback/FEEDBACK.md             how user feedback becomes changes
+├── feedback/FEEDBACK.md
 ├── .github/ISSUE_TEMPLATE/feedback.md
 └── CHANGELOG.md
 ```
 
----
-
-## Customising & improving from feedback
+## Changing it
 
 | Want to change… | Edit |
 |---|---|
-| Which images get made | `knowledge/coverage-checklist.md` |
+| Which 4 images a command makes | `knowledge/image-sets.md` |
 | Look of images | `knowledge/visual-style-guide.md` |
-| Prompt wording per image type | `examples/image-prompt-templates.md` |
+| Prompt wording | `examples/image-prompt-templates.md` |
 | Safety behaviour | `knowledge/safety-rules.md` |
-| Commands | `workflows/commands.md` + `SKILL.md` + `instructions/gpt-instructions.md` |
+| Commands | `SKILL.md` + `instructions/gpt-instructions.md` + `workflows/commands.md` |
 
-Process: collect feedback (GitHub issue template) → edit the file → bump the version in
-`SKILL.md` → add a line to `CHANGELOG.md` → re-upload changed files to the Custom GPT.
-See [`feedback/FEEDBACK.md`](feedback/FEEDBACK.md).
+Then bump the version in `SKILL.md`, add a line to `CHANGELOG.md`, and re-upload the changed
+files to the Custom GPT. See [`feedback/FEEDBACK.md`](feedback/FEEDBACK.md).
 
 ## Known limits
-- ChatGPT creates images one at a time; a 12-image run takes a few minutes and a few `/next`.
-- Image limits depend on the user's ChatGPT plan; free plans may stop mid-run.
-- AI images teach concepts and are not anatomically exact. Trust the caption text for facts.
+- Image limits depend on the user's ChatGPT plan.
+- AI images teach concepts and are not anatomically exact; trust the notes for facts.

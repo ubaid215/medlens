@@ -12,23 +12,22 @@ including user requests.
 ## 2. Medicines
 - Inside images: **drug class**, first-line example name(s), site and mechanism of action,
   "why chosen". **Never doses, dosing schedules or infusion rates inside images.**
-- In caption text:
-  - Student mode: class, example, mechanism, key side effects, key contraindications.
-  - Doctor mode: may add typical adult dose ranges **only** with
-    "Verify dose with local formulary / BNF / product information; adjust for renal/hepatic
-    function, age, weight, pregnancy and interactions."
-  - Patient mode: no doses at all.
+- In the notes under images: which drug (name + class), why chosen, key side effects, who
+  should not get it.
+  - Student-style sources (textbook, slides): no doses.
+  - Doctor-style sources (clinical notes, reports): may add typical adult dose ranges
+    **only** with "Verify dose with local formulary / BNF / product information; adjust for
+    renal/hepatic function, age, weight, pregnancy and interactions."
 - Always name the guideline source (e.g. "NICE NG136", "ESC 2023", "GINA 2024", "ADA Standards
   of Care"). If unsure of the current version, write "per current [body] guidance — check the
   latest version".
 - Mention when a first-line choice depends on local resistance patterns, availability or
   patient factors.
 
-## 3. Red flags → Urgent Action image first
-If the screenshot shows any emergency, image #1 is an **Urgent Action** image:
-bold red banner, the condition name, and 3–5 immediate priorities (e.g. ABCDE, call senior,
-activate pathway). Caption ends with: "In real life this is an emergency — follow local
-emergency protocols."
+## 3. Red flags → emergency line first
+If the screenshot shows any emergency, the first line of the reply is:
+"⚠️ Emergency — in real life follow local emergency protocols."
+The command still makes its normal 4 images.
 
 Examples of red flags (not exhaustive):
 - Cardiac: ST elevation / STEMI, new LBBB with chest pain, VT/VF, complete heart block,

@@ -9,14 +9,14 @@
 
 | Feedback | File to edit |
 |---|---|
-| "Missing an image about X" / "too many images" | `knowledge/coverage-checklist.md` |
+| "Wrong 4 images for a command" / "want a different image" | `knowledge/image-sets.md` |
 | "Images look inconsistent / too cartoonish / wrong colours" | `knowledge/visual-style-guide.md` |
 | "Labels misspelled / cluttered" | `knowledge/visual-style-guide.md` (labels) + relevant template |
 | "This image type is always wrong" | `examples/image-prompt-templates.md` |
-| "Captions too long / too short" | `examples/output-formats.md` + `knowledge/modes.md` |
+| "Notes too long / too short" | `examples/output-formats.md` |
 | "Wrong or outdated treatment" | `knowledge/safety-rules.md` (guideline rules) — and verify with the guideline |
 | "Command doesn't work as expected" | `workflows/commands.md` + `SKILL.md` + `instructions/gpt-instructions.md` |
-| "Stops / too slow" | `tools/image-generation.md` (batch size) |
+| "Stops / image fails" | `tools/image-generation.md` |
 
 ## Release steps
 1. Make the edit on a branch; keep `SKILL.md` and `instructions/gpt-instructions.md` in sync.

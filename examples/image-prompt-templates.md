@@ -5,8 +5,17 @@ Fill the `[brackets]`. **Start every prompt with:**
 > Single-concept medical illustration, NOT an infographic poster, no paragraphs of text,
 > no title banner, no "key takeaways" or "clinical pearl" boxes.
 
-Take every label from the Fact Sheet. Always append the **global style block** and
-**exclude line**:
+Take every label exactly from the screenshot (or well-established knowledge). Always append
+the **global style block** and **exclude line**:
+
+## Which template for which slot
+
+| Command | Slot 1 | Slot 2 | Slot 3 | Slot 4 |
+|---|---|---|---|---|
+| `/medlens` | 1 Normal anatomy | 2 Physiology or 4 Pathogenesis (the source's process) | 6 Clinical features | Differential, or the best-fitting template for the key point |
+| `/pathology` | 3 Causes | 4 Pathogenesis | 5 Pathology | 12 Complications |
+| `/tests` | 6 Clinical features (signs) or 9 scene | 7 Investigations (test 1) | 7 Investigations (test 2) | 8 Diagnosis flow |
+| `/treatment` | 10x Treatment ladder | 10 Pharmacology | 11 Procedure (or 10 for 2nd drug class) | 13 Follow-up + 14 Patient cards |
 
 > **STYLE:** Professional medical education illustration, high detail, clean composition,
 > soft neutral background, consistent colour palette (normal green, disease red, treatment
@@ -16,14 +25,6 @@ Take every label from the Fact Sheet. Always append the **global style block** a
 > doses, watermarks, patient identifiers, graphic gore.
 
 ---
-
-### 0. Urgent Action (red flags only)
-```
-Bold medical emergency infographic for "[CONDITION]". Red banner at top with text
-"URGENT: [CONDITION]". Below, [3–5] large numbered action cards with icons:
-"[Action 1]", "[Action 2]", "[Action 3]", "[Action 4]". Small 3D inset of the affected
-organ ([organ]) with the critical lesion highlighted in red. Landscape 3:2. STYLE. EXCLUDE.
-```
 
 ### 1. Normal anatomy
 ```
@@ -150,8 +151,5 @@ Landscape 3:2. STYLE. EXCLUDE.
 
 ---
 
-## Mode modifiers (add to the prompt)
-- **Quiz:** "Replace all label text with numbered circles ①②③…; no words except the title."
-- **Patient:** "Simple friendly style, large text, everyday words, max 5 labels."
-- **Doctor:** "Denser layout allowed: up to 4 panels; include score/criteria names."
-- **Redo with feedback:** start with "Revise previous image: [feedback]." then the full prompt.
+## Redo
+`/redo N [fix]`: start with "Revise previous image: [fix]." then repeat the full prompt.

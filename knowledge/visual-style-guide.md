@@ -52,7 +52,7 @@ Aspect ratio: **landscape 3:2** by default; **portrait 2:3** for full-body maps 
 - Professional staff in correct attire (scrubs, gloves, masks in OR), diverse people.
 - Focus on the action being taught; non-graphic, no exposed wounds in detail, no blood pools.
 
-### Patient counselling
+### Recovery & prevention cards
 - Warm, friendly semi-flat illustration, simple words, large icons.
 
 ## Colour coding (keep consistent across the whole run)
@@ -70,8 +70,8 @@ Aspect ratio: **landscape 3:2** by default; **portrait 2:3** for full-body maps 
 
 - 1–4 words each, **maximum ~8 labels per image**.
 - Use standard terminology spelled exactly (write the label text in quotes in the prompt).
-- Levels, numbers and named structures come **verbatim from the Fact Sheet**. Never merge
+- Levels, numbers and named structures come **exactly from the screenshot**. Never merge
   separate ranges ("T1–T4" and "T7–T9" stay separate; never "T2–T9" or "T1–T5").
 - Prefer abbreviations only when universal (ECG, MI, CT, ICU).
 - No paragraphs, no doses, no small print inside images.
-- Quiz mode: replace labels with numbers ①②③ only.
+

@@ -1,32 +1,27 @@
 # Commands — exact behaviour
 
-Commands are case-insensitive. Accept them with or without `/` (`next` = `/next`).
-Accept natural language equivalents ("make the next ones", "show only 3 and 7").
+Accept with or without `/`, any capitalisation, and plain-English versions
+("show the treatment", "what goes wrong?", "redo image 2").
 
-| Command | Needs | Behaviour |
-|---|---|---|
-| `/medlens` | Screenshot (new or the last one) | Full run (`workflows/full-run.md`). Replaces any previous plan. |
-| *(screenshot only)* | Screenshot | Same as `/medlens`. |
-| `/plan` | Screenshot | Steps 1–5 only. No images. User can then type `next` to start generating from image 1. |
-| `/next` | Existing plan | Generate the next 4 images not yet generated. If all done → final summary. If no plan → ask for a screenshot. |
-| `/next 6` | Existing plan | Next batch with 6 images instead of 4 (max 6). |
-| `/only 3 7 10` | Existing plan | Generate exactly these numbers, in this order. Ranges allowed: `/only 3-6`. |
-| `/redo 5` | Generated image 5 | Regenerate image 5 with the same plan line. |
-| `/redo 5 <feedback>` | Generated image 5 | Regenerate applying the feedback (e.g. "show the valves larger", "more realistic", "fewer labels"). Keep everything else. |
-| `/add <topic>` | Existing plan | Append new image(s) to the plan for that topic, show the new plan lines, then generate them. |
-| `/student` | — | Switch mode. If a screenshot is attached → full run in this mode. |
-| `/doctor` | — | Same, Doctor mode. |
-| `/quiz` | Existing plan or screenshot | Quiz version of the plan (numbered blank labels, answers at end of batch). |
-| `/patient` | Existing plan or screenshot | Patient plan (5–7 images, plain language). |
-| `/summary` | Existing run | Show the final summary now, without generating remaining images. |
-| `/help` | — | Show the command table from `SKILL.md`. |
+| Command | Behaviour |
+|---|---|
+| `/medlens` or screenshot alone | 4 images: structure · how it works · what the patient feels · key point |
+| `/pathology` | 4 images: causes · disease process · healthy vs diseased · complications |
+| `/tests` | 4 images: bedside signs · key test 1 · key test 2 · diagnosis path |
+| `/treatment` | 4 images: treatment plan · main medicine · procedure/surgery · recovery & prevention |
+| `/redo N` | Remake image N of the last reply. Text after N is the fix ("bigger labels", "show left side", "less text"). |
+| `/help` | Show the welcome text. |
 
-## Edge cases
-- **New screenshot mid-run**: ask "Start a new run for the new screenshot? (your current plan
-  has X images left)". If the user just sends it with `/medlens`, start the new run.
-- **Image generation fails / limit reached**: say which image failed, keep the plan, tell the
-  user they can type `/only <n>` later to continue from there.
-- **Image is wrong (anatomy/label error)**: apologise briefly, `/redo` automatically once with
-  the correction; if still wrong, note the error in the caption.
-- **User asks a question between batches**: answer it briefly, then remind:
-  "Type **next** to continue with images X–Y."
+## Topic and focus
+- `/pathology`, `/tests`, `/treatment` work on the topic of the last screenshot.
+- No screenshot yet → "Send a medical screenshot first."
+- Focus words narrow the topic: `/treatment surgery`, `/pathology inferior wall MI`,
+  `/tests ECG`.
+- A new screenshot starts a new topic; the no-repeat list resets.
+
+## Same command twice
+Make 4 **different** images (next most useful angles), never the same 4 again.
+
+## Problems
+- Image fails or the plan limit is reached → say which image; `/redo N` retries it.
+- User asks a question → answer in 2–4 lines, then show the `Next:` line again.
