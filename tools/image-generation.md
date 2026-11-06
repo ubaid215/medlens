@@ -39,6 +39,5 @@ Footer: small text "MedLens · Educational use".
 
 ## Platform notes
 - **ChatGPT (Custom GPT)**: enable the *Image Generation* capability in Configure.
-- **Other platforms with Agent Skills**: use that platform's built-in image tool if present.
-  If the platform has **no** image tool, output the full prompt for each image in a code block
-  under its plan number, so the user can generate it, and say so once at the start.
+- **Claude, or any platform with no image tool**: switch to **Claude mode** —
+  see `tools/claude-rendering.md` (diagrams drawn as SVG, prompts for photoreal images).

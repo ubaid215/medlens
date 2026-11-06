@@ -4,12 +4,37 @@ Use these exactly. Keep text short — the images carry the teaching.
 
 ---
 
+## 0. Welcome (first message of a chat, or `/help`) — use exactly
+
+```markdown
+🩺 MedLens v1.2 ready. Send a medical screenshot and type /medlens (or just send it).
+Commands: /plan /next /only /redo /add /student /doctor /quiz /patient /summary /help.
+Educational use only.
+```
+If the welcome looks different, the GPT is not running MedLens instructions — see
+`setup/custom-gpt-setup.md` §5.
+
+---
+
+## A0. Fact Sheet
+
+```markdown
+### 📌 Fact Sheet (from your screenshot)
+1. [exact fact, verbatim levels/numbers]
+2. [exact fact]
+3. …
+⚠️ [any conflict with standard teaching]
+```
+
+---
+
 ## A. Topic Card
 
 ```markdown
 ### 🩺 MedLens — Topic Card
 **Source:** [Lecture slide | Clinical notes | Lab report | …]
 **Mode:** [Student | Doctor | Patient] (auto-detected — type /doctor or /student to switch)
+**Renderer:** [Image mode | Claude mode — diagrams drawn, prompts for 3D/photoreal]
 
 | | |
 |---|---|
@@ -30,12 +55,12 @@ Use these exactly. Keep text short — the images carry the teaching.
 ### 🗺️ Visual Plan — [N] images · [B] batches of 4
 
 **[Condition 1]**
-| # | Category | Image | Style |
-|---|---|---|---|
-| 1 | ⚠️ Urgent | [title] — [one line] | Infographic |
-| 2 | Anatomy | [title] — [one line] | 3D |
-| 3 | Physiology | … | 3D + arrows |
-| … | … | … | … |
+| # | Category | One concept | New element shown | Style |
+|---|---|---|---|---|
+| 1 | ⚠️ Urgent | [concept] | [element] | Infographic |
+| 2 | Anatomy | [concept] | [element] | 3D |
+| 3 | Physiology | … | … | 3D + arrows |
+| … | ➕ Investigations (beyond source) | … | … | Panels |
 
 **[Condition 2]** (if any)
 | … |

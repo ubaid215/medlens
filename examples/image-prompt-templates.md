@@ -1,12 +1,19 @@
 # Image Prompt Templates
 
-Fill the `[brackets]`. Always append the **global style block** and **exclude line**:
+Fill the `[brackets]`. **Start every prompt with:**
+
+> Single-concept medical illustration, NOT an infographic poster, no paragraphs of text,
+> no title banner, no "key takeaways" or "clinical pearl" boxes.
+
+Take every label from the Fact Sheet. Always append the **global style block** and
+**exclude line**:
 
 > **STYLE:** Professional medical education illustration, high detail, clean composition,
 > soft neutral background, consistent colour palette (normal green, disease red, treatment
 > blue, warning orange, tests purple), sharp legible labels in clean sans-serif font.
 > Small footer text "MedLens · Educational use".
-> **EXCLUDE:** extra text, paragraphs, doses, watermarks, patient identifiers, graphic gore.
+> **EXCLUDE:** extra text, paragraphs, multi-section poster layout, brand or atlas titles,
+> doses, watermarks, patient identifiers, graphic gore.
 
 ---
 

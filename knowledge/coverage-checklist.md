@@ -5,7 +5,8 @@ Include a category when the screenshot gives material for it **or** when it is s
 well-established knowledge needed to understand the topic. Skip a category only when it
 genuinely does not apply (e.g. no procedure exists for the condition).
 
-Typical result: **8–14 images per condition.** Never stop at one image.
+Typical result: **8–14 images per condition. Minimum 8.** A plan of 4 images is never
+acceptable.
 
 | # | Category | Include when | Image shows | Style |
 |---|---|---|---|---|
@@ -23,6 +24,36 @@ Typical result: **8–14 images per condition.** Never stop at one image.
 | 12 | Complications | Complications are recognised | Organ/body with complication callouts, untreated course | 3D / body map |
 | 13 | Follow-up & prevention | Monitoring or prevention exists | Timeline with monitoring points and targets | Timeline |
 | 14 | Patient counselling | Always (one per condition) | Simple friendly explainer of condition + key advice | Simple illustration |
+
+## Clinical Block — always included
+
+Students and doctors need the clinical side even when the screenshot is pure anatomy or
+physiology (e.g. a "Cardiac pain" anatomy note). For the main clinical condition behind the
+topic, always add:
+
+| Category | Example for an anatomy-only "cardiac pain" source |
+|---|---|
+| 7 Investigations | 12-lead ECG changes, high-sensitivity troponin |
+| 8 Diagnosis flow | Chest pain → ECG → STEMI / NSTE-ACS / non-cardiac |
+| 10 Pharmacology | Antiplatelets, nitrates, beta-blockers, statins (one class per image if needed) |
+| 9 / 11 Management / procedure | Primary PCI scene, cardiac rehabilitation |
+
+Mark these plan lines and captions **"➕ beyond source"** and name the guideline used.
+
+## No-Repeat Ledger
+
+Keep a running list of elements already drawn (e.g. "whole heart 3D", "spinal column",
+"patient clutching chest", "dermatome map T1–T4", "oesophagus").
+- Each new image must show at least one element not yet in the ledger, and its **main
+  subject** must not already be the main subject of an earlier image.
+- A hero element may be the main subject of **one** image only; afterwards it may appear only
+  as a small inset when essential to the new concept.
+- Two plan lines that would produce near-identical images must be merged or re-focused.
+
+## Plan line format
+
+`# · Category · ONE concept · NEW element shown · Style`
+Example: `5 · Pathology · Inferior-wall MI refers pain to epigastrium · T7–T9 epigastric dermatomes · Body map`
 
 ## Extra images (add when relevant)
 

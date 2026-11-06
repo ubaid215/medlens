@@ -31,8 +31,28 @@ Copy the prompt from [`setup/install-by-link.md`](setup/install-by-link.md), rep
 ChatGPT reads the skill files from GitHub and follows them **for that chat**.
 (Needs web access in ChatGPT. Option A is more reliable because the files are always loaded.)
 
-### Option C — Platforms that support Agent Skills (`SKILL.md`)
-Upload the whole `medlens/` folder (or a zip of it) as a skill. `SKILL.md` is the entry point.
+### Option C — Claude (and other platforms that support Agent Skills)
+Zip the repository (`SKILL.md` must be inside the top folder of the zip) and upload it in
+Claude: **Settings → Capabilities → Skills → Upload skill**. Skill upload depends on your
+Claude plan.
+
+Claude has no built-in image generator, so MedLens runs in **Claude mode** there:
+
+| Image type | In Claude mode |
+|---|---|
+| Flowcharts, timelines, treatment ladders, body maps, drug mechanisms, ECG strips, lab charts, risk factors, differentials, urgent cards, patient cards | **Drawn directly** by Claude (SVG) |
+| 3D anatomy, 3D pathology, realistic clinical/OR scenes | Labelled **schematic drawn** + a **ready-to-paste prompt** for any image generator |
+
+Everything is collected in one HTML page (artifact) that grows with each `/next`, so you end
+up with a complete visual study sheet.
+
+### Which option gives what
+
+| Platform | Result |
+|---|---|
+| ChatGPT Custom GPT | All images generated, including 3D and realistic |
+| ChatGPT install-by-link | Same, for one chat |
+| Claude skill | ~75% drawn as diagrams, 3D/realistic as schematic + prompt |
 
 ---
 
@@ -67,11 +87,14 @@ medlens/
 │   ├── full-run.md                    the /medlens pipeline
 │   └── commands.md                    every command in detail
 ├── tools/                           4. Tools
-│   └── image-generation.md            built-in image tool, batching, limits
+│   ├── image-generation.md            built-in image tool, batching, limits
+│   └── claude-rendering.md            Claude mode: drawn SVG diagrams + prompts
 ├── examples/                        5. Examples & output formats
 │   ├── image-prompt-templates.md      a template per image category
+│   ├── svg-templates.md               SVG diagram templates + HTML page shell
 │   ├── output-formats.md              topic card, plan, captions, summary
-│   └── sample-run.md                  full worked example
+│   ├── sample-run.md                  full worked example
+│   └── test-cardiac-pain.md           regression test + pass criteria
 ├── setup/
 │   ├── custom-gpt-setup.md
 │   └── install-by-link.md

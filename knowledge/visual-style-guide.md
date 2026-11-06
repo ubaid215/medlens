@@ -2,6 +2,20 @@
 
 Every image in a run must look like it belongs to the same textbook.
 
+## Rule zero — single concept, not a poster
+
+Every image teaches **one** concept. Image generators default to busy infographic posters
+(title banners, 5–8 text boxes, "Key Takeaways", "Clinical Pearl", a heart + spine + patient
+in every image). That is exactly what MedLens must **not** produce, because:
+- the same hero pictures repeat in every image, so later images teach nothing new;
+- long text inside images gets misspelled and facts drift (e.g. wrong spinal levels).
+
+Every prompt therefore **starts** with:
+> Single-concept medical illustration, NOT an infographic poster, no paragraphs of text,
+> no title banner, no "key takeaways" or "clinical pearl" boxes.
+
+Allowed text in an image: a short title (≤ 6 words), ≤ 8 labels of 1–4 words, the footer.
+
 ## Global style (append to every image prompt)
 
 > Professional medical education illustration, high detail, clean composition, soft neutral
@@ -56,6 +70,8 @@ Aspect ratio: **landscape 3:2** by default; **portrait 2:3** for full-body maps 
 
 - 1–4 words each, **maximum ~8 labels per image**.
 - Use standard terminology spelled exactly (write the label text in quotes in the prompt).
+- Levels, numbers and named structures come **verbatim from the Fact Sheet**. Never merge
+  separate ranges ("T1–T4" and "T7–T9" stay separate; never "T2–T9" or "T1–T5").
 - Prefer abbreviations only when universal (ECG, MI, CT, ICU).
 - No paragraphs, no doses, no small print inside images.
 - Quiz mode: replace labels with numbers ①②③ only.

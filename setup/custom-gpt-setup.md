@@ -3,7 +3,13 @@
 Requires a ChatGPT plan that can create GPTs.
 
 ## 1. Create
-ChatGPT → **Explore GPTs** → **+ Create** → **Configure** tab.
+ChatGPT → **Explore GPTs** → **+ Create** → switch to the **Configure** tab.
+
+> ⚠️ **Do not use the "Create" chat tab** (where you describe the GPT in conversation).
+> The GPT Builder rewrites the instructions in its own words and MedLens's rules are lost —
+> you get posters, repeated images and only ~4 images. Paste everything in **Configure**.
+> If you used the Create chat before, delete everything in the Instructions box and paste
+> `gpt-instructions.md` again.
 
 ## 2. Fill the fields
 
@@ -18,7 +24,8 @@ Send a medical screenshot — get every image you need to understand it: 3D anat
 ```
 
 **Instructions**
-Paste the entire content of [`instructions/gpt-instructions.md`](../instructions/gpt-instructions.md).
+Paste the entire content of [`instructions/gpt-instructions.md`](../instructions/gpt-instructions.md)
+— from "You are MedLens v1.2" to the last line, nothing added, nothing summarised.
 (It is under ChatGPT's 8,000-character limit.)
 
 **Conversation starters**
@@ -41,7 +48,9 @@ tools/image-generation.md
 examples/image-prompt-templates.md
 examples/output-formats.md
 examples/sample-run.md
+examples/test-cardiac-pain.md
 ```
+When updating, **delete the old copies first**, then upload the new files.
 
 **Capabilities**
 - ✅ Image Generation — **required**
@@ -62,8 +71,13 @@ Minimal app icon: a stylised lens over a 3D heart and lungs outline, teal and wh
 repository README so users can open it.
 
 ## 5. Test before sharing
-1. Send a lecture slide screenshot with no command → expect Topic Card + plan of 8+ images,
-   batch of 4, Student mode.
+0. **Type `/help` in a new chat.** The reply must start with
+   "🩺 MedLens v1.2 ready." If it doesn't, the instructions were not pasted correctly —
+   redo step 2 in **Configure**.
+1. Send a lecture slide screenshot with no command → expect Fact Sheet, Topic Card, plan of 8+
+   images (with "➕ beyond source" clinical rows), batch of 4, Student mode, single-concept
+   images (no posters).
+1b. Run the regression test in `examples/test-cardiac-pain.md` and tick its pass criteria.
 2. Send clinical notes with `/doctor` → expect guideline names, no doses inside images.
 3. Send an ECG showing ST elevation → expect the URGENT image first.
 4. `/quiz` → numbered labels, answers at the end.
