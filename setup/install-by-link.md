@@ -1,40 +1,39 @@
-# Install by Link (paste into any ChatGPT chat)
+# Quick Install in One Chat (no Custom GPT)
 
-This loads MedLens **for one chat** by letting ChatGPT read the files from GitHub.
-ChatGPT needs web access. For a permanent install, use the Custom GPT
-(`custom-gpt-setup.md`) instead.
+For a permanent install use the **Custom GPT** (`custom-gpt-setup.md`) — it is the most
+reliable way. Use this page only to try MedLens in a normal ChatGPT chat.
 
-Replace `<your-username>` (and `main` if your default branch is different), then paste the
-whole block into a new chat:
+## Recommended: paste the instructions (no web needed)
+
+1. Open a **new** ChatGPT chat with image generation available. Turn **web search off**.
+2. Open [`instructions/gpt-instructions.md`](../instructions/gpt-instructions.md), copy
+   **all** of it.
+3. Paste it as your first message, with this line on top:
 
 ```
-Install the MedLens skill for this chat. Read these files and follow them exactly for the
-rest of this conversation. SKILL.md is the main instruction; safety-rules.md overrides
-everything else.
-
-https://raw.githubusercontent.com/<your-username>/medlens/main/SKILL.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/command-coverage.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/modes.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/visual-style-guide.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/knowledge/safety-rules.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/workflows/full-run.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/workflows/commands.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/tools/image-generation.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/examples/image-prompt-templates.md
-https://raw.githubusercontent.com/<your-username>/medlens/main/examples/output-formats.md
-
-When you have read them, reply only with the welcome text from output-formats.md.
+Follow these instructions as your rules for this whole chat. Do not summarise them.
+Reply only with the MedLens welcome text.
 ```
 
-## Shorter version (if ChatGPT can open the repository page)
+4. ChatGPT replies with "🩺 MedLens v4 ready." Now upload your screenshot and type a command.
+
+## Why not just paste the GitHub link?
+
+Reading a link makes ChatGPT use **web search**. In that mode it tends to summarise the
+repository and answer with a **text article and web thumbnails instead of generating
+sheets**, and it takes facts from the web instead of your screenshot. Pasting the
+instructions avoids all of that.
+
+If you still want the link, use only the single instructions file:
 ```
-Install the MedLens skill from https://github.com/<your-username>/medlens — read SKILL.md and
-every file it lists, follow them for this whole chat, then reply "✅ MedLens installed".
+Read https://raw.githubusercontent.com/ubaid215/medlens/main/instructions/gpt-instructions.md
+and follow it as your rules for this whole chat. Do not summarise it. From now on do NOT use
+web search or web images — always generate the sheets with the image tool.
+Reply only with the MedLens welcome text.
 ```
 
 ## Troubleshooting
-- **"I can't access that URL"** → the repo must be **public**, and web search must be on.
-  Otherwise use the Custom GPT, or attach the files directly to the chat.
-- **It forgets the rules later in a long chat** → paste the install prompt again, or use the
-  Custom GPT (its instructions are always loaded).
-- **No images appear** → the chat or plan must have image generation available.
+- **Text article or web pictures instead of sheets** → web search was on. Start a new chat,
+  turn web search off, and use the paste method.
+- **It forgets the rules in a long chat** → paste the instructions again, or use the Custom GPT.
+- **No images at all** → your plan or chat has no image generation available.

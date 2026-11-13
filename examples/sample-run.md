@@ -1,78 +1,59 @@
 # Sample Run (reference example)
 
-Source: lecture slide "Acute Appendicitis" (student-style).
+Source: clinical note "Essential hypertension — newly diagnosed, 58-year-old, BP 162/98 on
+repeat readings, type 2 diabetes" (doctor-style → Doctor mode).
 
 ---
 
-**User:** *[screenshot]* `/medlens`
+**User:** *[screenshot]* `/clinical`
 
-🩺 Acute Appendicitis — Anatomy & Origin · 6 images · Student
+🩺 Hypertension — Clinical: OPD · 5 sheets · Doctor
 
-*[image 1: 3D render of the right iliac fossa: caecum, appendix, terminal ileum, taeniae
-coli converging on the appendix base. Labels: "Caecum", "Appendix", "Terminal ileum",
-"Taeniae coli"]*
+*[Sheet 1 — L3 step cards, title "Hypertension: OPD Plan".
+Cards: "1 Confirm" — "Clinic + home/ambulatory readings";
+"2 Assess risk" — "Organ damage, CVD risk, kidneys";
+"3 Set target" — "Clinic BP below 140/90";
+"4 Start treatment" — "Lifestyle + first-line drug";
+"5 Step up" — "Add second drug if not controlled";
+"6 Review" — "Monthly until at target".
+Tip strip: "Check adherence before adding drugs".]*
 
-1. Where the appendix sits
-- Hangs from the caecum where the three taeniae coli meet.
-- Position varies; retrocaecal is the most common.
-💡 Tip: follow the taeniae to find the base in surgery.
+1. OPD plan
+- Diabetes changes first-line choice → ACE inhibitor or ARB ➕ beyond source
+- Targets depend on age and guideline; confirm with your local guideline
+📚 NICE NG136 (check latest version)
 
-*[image 2: 3D close-up of the appendix with its mesoappendix and the appendicular artery
-from the ileocolic artery. Labels: "Mesoappendix", "Appendicular artery", "Ileocolic artery"]*
+*[Sheet 2 — L5 drug cards, title "Hypertension: First-Line Medicines".
+Header "ACE inhibitor": card "Ramipril" — "Use: hypertension with diabetes",
+"How: blocks angiotensin II formation", "Why: protects kidneys in diabetes",
+"Side effects: dry cough, high potassium", "Avoid in: pregnancy, angioedema",
+"Monitor: creatinine, potassium",
+"Dose: [typical adult range]" + "Verify with formulary".
+Header "ARB": card "Losartan" — "Use: if ACE inhibitor cough",
+"How: blocks angiotensin II receptor", "Why: same benefit, no cough",
+"Side effects: dizziness, high potassium", "Avoid in: pregnancy",
+"Monitor: creatinine, potassium".
+Box "Remember": "Never combine ACE inhibitor and ARB".]*
 
-2. Blood supply
-- Appendicular artery is an end artery, so blockage → gangrene and perforation.
+2. First-line medicines
+- Diabetes → ACE inhibitor (or ARB if not tolerated) protects the kidneys
+- Doses: typical adult ranges — verify with local formulary/BNF; adjust for renal function
+📚 NICE NG136 · ADA Standards of Care (check latest versions)
 
-*[image 3: cutaway of the appendix lumen blocked by a faecolith, red highlight at the
-obstruction. Labels: "Faecolith", "Blocked lumen", "Lymphoid tissue"]*
+*[Sheet 3 — L5 drug cards, "Add-On Medicines": calcium-channel blocker (amlodipine),
+thiazide-like diuretic (indapamide), each with Use/How/Why/Side effects/Avoid in/Monitor.]*
 
-3. Root cause and starting point
-- Disease starts with **obstruction of the lumen** — faecolith or lymphoid swelling.
-- Mucus builds up → pressure rises → bacteria multiply.
+*[Sheet 4 — L2 info rows, "Special Groups": Pregnancy · Elderly · Kidney disease ·
+Black African/Caribbean origin — what changes and why.]*
 
-*[image 4: 3 numbered panels: distended appendix → inflamed wall → serosa reaching parietal
-peritoneum. Labels: "Distension", "Inflamed wall", "Parietal peritoneum"]*
-
-4. How it spreads
-- Inflammation moves from the lining outward to the serosa.
-- Once it touches the parietal peritoneum, pain becomes sharp and localised.
-
-*[image 5: body map: periumbilical shading (T10) with an arrow to the right iliac fossa.
-Labels: "Periumbilical (T10)", "Right iliac fossa", "McBurney's point"]*
-
-5. First symptoms and where they are felt
-- Early: dull central pain (visceral, T10).
-- Later: sharp pain moves to the right iliac fossa.
-- Nausea, loss of appetite, low-grade fever.
-
-*[image 6: comparison of the appendix positions: retrocaecal, pelvic, subcaecal. Labels:
-"Retrocaecal", "Pelvic", "Subcaecal"]*
-
-6. Key point: position changes the signs
-- Pelvic appendix → urinary or rectal symptoms; retrocaecal → flank/back pain.
-
-👉 Next: /pathology — then /tests and /clinical (Surgical pathway: appendicectomy)
-
----
-
-**User:** `/clinical`
-
-🩺 Acute Appendicitis — Clinical: Surgical · 7 images · Student
-
-1. Indications — flowchart: confirmed appendicitis → appendicectomy; selected uncomplicated
-   cases → antibiotics-first option; abscess → drainage + antibiotics.
-2. Before surgery — workflow: assessment, bloods, imaging if unsure, consent, nil by mouth,
-   IV fluids, prophylactic antibiotics.
-3. Anaesthesia & positioning — realistic OR, supine, general anaesthesia.
-4. Port placement — laparoscopic port sites on the abdomen.
-5. Dividing the base — laparoscopic view, base secured with loops, mesoappendix divided.
-6. After surgery — ward scene: pain control, early eating, mobilising.
-7. Complications to watch — body map: wound infection, pelvic abscess, ileus.
-
-(Each image has 2–4 bullets explaining **why** — e.g. "Why laparoscopic: less pain, faster
-recovery, fewer wound infections.")
-
-📚 WSES Jerusalem guidelines for appendicitis / NICE (check latest versions) ➕ beyond source
+*[Sheet 5 — L2 info rows, "Lifestyle, Follow-Up & Red Flags": salt, weight, exercise,
+alcohol, smoking; review schedule; "Refer urgently: BP ≥ 180/120 with symptoms".]*
 
 👉 Next: /pathology · /tests
 Educational only — not a prescription or surgical advice. Follow current guidelines and verify doses with a formulary.
+
+---
+
+## Same command in `/student` mode
+Same 5 parts, **L7 study-notebook** look ("Study tips", "Memory trick: ACE → A Cough
+Expected"), notes with "💡 Tip", **no doses anywhere**.

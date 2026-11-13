@@ -1,112 +1,98 @@
-# Command Coverage — what each command must cover
+# Command Coverage — which sheets each command makes
 
-**You decide how many images.** Make as many as the topic needs to be fully understood —
-one idea per image, no filler, no repeats. A small concept may need 3; a major disease may
-need 10 or more. Never pad, never cut an important point to save images.
+Every command makes **infographic sheets** (see `knowledge/visual-style-guide.md`).
+**You decide how many sheets** — as many as the topic needs to be fully clarified. One sheet
+covers one part of the topic with 4–8 sections; when a part has more than one sheet can hold
+readably, split it. Never pad, never cut an important point.
 
-State the count on the topic line: `🩺 Appendicitis — Anatomy & Origin · 6 images`.
-If the platform stops before all images are done, the user types `continue`.
+Topic line shows the count: `🩺 Hypertension — Clinical: OPD · 4 sheets · Doctor`.
+If the platform stops before all sheets are done, write `Type continue for sheets N–M.`
+
+Layouts: **L1** atlas cross-section · **L2** info rows · **L3** step cards · **L4** photo
+panel grid · **L5** drug cards · **L6** proforma dashboard · **L7** study notebook
+(replaces the layout's look in `/student` and `/exam`).
 
 ---
 
-## `/medlens` — Anatomy, root cause, and where the disease starts
+## `/medlens` — Anatomy, root cause, where the disease starts
 
-Always the first command for a new screenshot. Cover, as needed:
-- **Normal anatomy** of every structure involved (3D, labelled), including relations,
-  blood supply, nerve supply, lymphatics when relevant.
-- **Normal function** the disease disrupts.
-- **Root cause** — the underlying cause (e.g. obstruction, ischaemia, infection,
-  autoimmunity, mutation, trauma).
-- **Starting point** — the exact site where the disease begins, shown in its anatomical
-  context (e.g. appendix lumen obstruction by faecolith; coronary plaque in the LAD).
-- **How it spreads / first changes** from that starting point.
-- **What the patient first notices** — early symptoms and where they are felt.
-- The screenshot's **key point** (special case, classic exam fact).
+| Sheet | Layout | Contents |
+|---|---|---|
+| Detailed anatomy | L1 | Every structure involved, 15–30 labels; relations, blood/nerve supply when relevant. Split into 2 sheets for complex regions (e.g. external + internal view) |
+| Normal function | L3 | How it works normally, 4–6 steps |
+| Root cause & starting point | L2 or L3 | Underlying cause(s); the exact site where the disease begins (shown on the organ); how it spreads; first changes |
+| First symptoms & key point | L2 | What the patient notices first and where; the screenshot's key clinical/exam point |
 
 End with a **recommended next command** (see "Choosing the next command").
 
 ## `/pathology` — The disease in depth
 
-Cover, as needed:
-- Aetiology and risk factors
-- Pathogenesis step by step (molecular → cellular → tissue → organ)
-- Gross pathology (healthy vs diseased)
-- Microscopic / histopathology findings
-- Types, classification or staging
-- Natural history if untreated
-- Complications (local and systemic)
-- Prognostic factors
+| Sheet | Layout | Contents |
+|---|---|---|
+| Causes & risk factors | L2 | Aetiology rows, modifiable vs non-modifiable |
+| Pathogenesis | L3 | Molecular → cellular → tissue → organ steps |
+| Gross & micro pathology | L2 + hero split image | Normal vs diseased organ; histology findings |
+| Types / classification / staging | L2 or L3 | Each type with its key feature |
+| Complications & prognosis | L2 | Local and systemic complications; prognostic factors |
 
-## `/tests` — Clinical examination and diagnosis
+## `/tests` — Clinical examination & diagnosis
 
-Cover, as needed:
-- **History**: key symptoms and questions to ask
-- **Clinical examination**: inspection, palpation, percussion, auscultation; special signs
-  and manoeuvres (e.g. McBurney's point, Rovsing's sign, Murphy's sign) — shown being
-  performed in a realistic clinic/bedside scene
-- **Bedside tests** (e.g. ECG, urine dip, glucose)
-- **Laboratory tests** with typical abnormal results
-- **Imaging** with typical findings (X-ray, ultrasound, CT, MRI)
-- **Scores / criteria** (e.g. Alvarado, CURB-65, Wells)
-- **Differential diagnosis** — how to tell look-alikes apart
-- **Diagnosis pathway** — presentation → tests → diagnosis
+| Sheet | Layout | Contents |
+|---|---|---|
+| History & examination format | L6 | Presenting complaint, HPI, past/family/personal history, general and systemic examination sections relevant to the topic |
+| Examination techniques & signs | L4 | Inspection, palpation, percussion, auscultation, special signs — real photos of each being performed |
+| Investigations: what they show | L2 | Each test → typical abnormal result → what it means (labs, imaging) |
+| Interpretation method | L3 | e.g. ECG, X-ray, ABG step-by-step with normal vs abnormal examples |
+| Scores, differentials & diagnosis path | L3 or L2 | Scores/criteria, look-alikes with distinguishing features, presentation → diagnosis |
 
 ## `/clinical` — Management (auto: OPD or Surgical)
 
-The model decides the pathway from the topic (see below). The user can force one:
-`/clinical opd` or `/clinical surgical`.
+Choose the pathway from the topic; user can force `/clinical opd` or `/clinical surgical`.
+If both matter (e.g. ACS: medicines + PCI), make the main pathway and end with
+"👉 Also available: /clinical surgical" (or opd).
 
-### OPD / medical pathway
-For conditions managed mainly with medicines and follow-up (e.g. hypertension, diabetes,
-asthma, GERD, stable angina, hypothyroidism).
-- OPD consultation flow: assessment → diagnosis → plan
-- **First-line medicine**: which drug, how it works (mechanism image), **why it is chosen**
-- Second-line / add-on options and when to step up (treatment ladder)
-- Side effects to watch, who should not take it, monitoring tests
-- Lifestyle and non-drug management
-- Follow-up schedule and targets
-- Red flags → when to refer or admit
-- Patient counselling points
+### OPD pathway — conditions managed mainly with medicines
 
-### Surgical pathway
-For conditions where surgery or a procedure is the key treatment (e.g. appendicitis,
-hernia, cholecystitis, fractures, CABG/PCI, tumours).
-- **Indications** for surgery (and when not to operate)
-- **Pre-operative workflow**: assessment, investigations, consent, fasting, prophylaxis
-  (e.g. antibiotics, VTE), marking
-- **Anaesthesia** type
-- **Operative steps** in order (positioning, incision/ports, key steps, closure) —
-  realistic OR scenes, non-graphic
-- Open vs minimally invasive options and **why one is chosen**
-- **Post-operative care**: analgesia, monitoring, drains, mobilisation, diet
-- **Post-op complications** and how they present
-- Discharge criteria and follow-up
+| Sheet | Layout | Contents |
+|---|---|---|
+| OPD plan | L3 | Assessment → diagnosis → targets → treatment steps (ladder) → follow-up |
+| First-line medicines | **L5 drug cards** | Each drug: **name, Use, How it works, Why chosen, Side effects, Avoid in, Monitor** (+ Dose in `/doctor`) |
+| Add-on / second-line medicines | **L5 drug cards** | When to add, which drug, why; combinations to avoid |
+| Special groups | L5 or L2 | Pregnancy, elderly, kidney/liver disease, children — what changes and why |
+| Lifestyle, follow-up & red flags | L2 | Non-drug measures, review schedule and targets, monitoring tests, when to refer or admit |
+| Patient counselling | L2 (friendly) | How to take medicines, what to expect, warning signs |
 
-### Both
-If a condition has an important medical **and** surgical/procedural part (e.g. acute
-coronary syndrome: medicines + PCI), cover the main pathway and end with
-"Also available: /clinical surgical" (or opd).
+**Drug card rules**
+- Generic names; first-line choices per a named guideline (NICE, WHO, ESC, AHA/ACC, ADA,
+  GINA, GOLD, local national guideline) — name it under the sheet.
+- "Why chosen" is mandatory on every card.
+- Doses: in the notes under the sheet by default. In `/doctor` mode a "Dose:" line may appear
+  on the card with "Verify with formulary". Never doses in `/student`, `/exam` or `/patient`.
+
+### Surgical pathway — conditions where surgery/procedure is key
+
+| Sheet | Layout | Contents |
+|---|---|---|
+| Indications & decision | L3 | When to operate, when not to, conservative options |
+| Pre-operative workflow | L2 or L3 | Assessment, investigations, consent, fasting, prophylaxis (antibiotics, VTE), marking, anaesthesia type |
+| Operation step by step | Surgical L4 variant | Positioning, incision/ports, key steps, closure — realistic theatre images; open vs minimally invasive and why |
+| Post-operative care | L4 or L2 | Analgesia, observations, drains, diet, mobilisation, wound care |
+| Complications & discharge | L2 | Early/late complications and how they present; discharge criteria; follow-up |
 
 ---
 
 ## Choosing the next command (after `/medlens`)
 
-Always end `/medlens` with one recommendation line, chosen from the topic:
-
 | Topic type | Recommend |
 |---|---|
 | Disease mainly treated with medicines | `/pathology` → `/tests` → `/clinical` (OPD) |
 | Disease mainly treated with surgery/procedure | `/pathology` → `/tests` → `/clinical` (Surgical) |
-| Emergency condition | `/tests` first (diagnosis is urgent) → `/clinical` |
-| Pure anatomy / physiology concept (no disease named) | `/pathology` for the main disease it explains (name it) |
+| Emergency condition | `/tests` first → `/clinical` |
+| Pure anatomy / physiology concept | `/pathology` for the main disease it explains (name it) |
 
-Format: `👉 Next: /pathology — then /tests and /clinical (Surgical pathway)`.
-After the other commands, show the remaining unused ones.
-
----
+Format: `👉 Next: /pathology — then /tests and /clinical (OPD pathway)`.
+After other commands, list the unused ones.
 
 ## No repeats (across all commands in a chat)
-
-Keep a list of what was already drawn. Each new image must show something new; the same
-main picture (whole organ, spine, patient holding abdomen/chest…) is never the main
-subject twice. A new screenshot resets the list.
+Each sheet covers a part not covered before, and the same hero visual is never reused.
+A new screenshot resets this.

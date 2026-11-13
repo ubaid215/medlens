@@ -7,7 +7,7 @@ ChatGPT → **Explore GPTs** → **+ Create** → switch to the **Configure** ta
 
 > ⚠️ **Do not use the "Create" chat tab** (where you describe the GPT in conversation).
 > The GPT Builder rewrites the instructions in its own words and MedLens's rules are lost —
-> you get posters, repeated images and missing topics. Paste everything in **Configure**.
+> you get text articles, web images and missing topics. Paste everything in **Configure**.
 > If you used the Create chat before, delete everything in the Instructions box and paste
 > `gpt-instructions.md` again.
 
@@ -20,20 +20,20 @@ MedLens
 
 **Description**
 ```
-Send a medical screenshot — get every image you need to understand it: 3D anatomy, pathology, clinical features, investigations, treatment, drug mechanisms and real clinical scenes. For medical students & doctors. Educational use only.
+Upload a medical screenshot — get detailed, high-resolution infographic sheets: 3D anatomy, root cause, pathology, examination & diagnosis, OPD drug cards and surgical workflows. For students, doctors & exam prep. Educational use only.
 ```
 
 **Instructions**
 Paste the entire content of [`instructions/gpt-instructions.md`](../instructions/gpt-instructions.md)
-— from "You are MedLens v3" to the last line, nothing added, nothing summarised.
+— from "You are MedLens v4" to the last line, nothing added, nothing summarised.
 (It is under ChatGPT's 8,000-character limit.)
 
 **Conversation starters**
 ```
 /medlens — anatomy, root cause & where the disease starts
 /pathology — the disease in depth
-/tests — clinical examination & diagnosis
-/clinical — management (OPD or surgical)
+/tests — examination & diagnosis
+/clinical — OPD drugs or surgery
 ```
 
 **Knowledge** — upload these files:
@@ -54,7 +54,8 @@ When updating, **delete the old copies first**, then upload the new files.
 
 **Capabilities**
 - ✅ Image Generation — **required**
-- ✅ Web Search — optional (helps check the latest guideline versions)
+- ⬜ Web Search — **OFF** (when on, ChatGPT answers with web thumbnails and text articles
+  instead of generating sheets, and takes facts from the web instead of your screenshot)
 - ⬜ Code Interpreter — not needed
 - ⬜ Canvas — not needed
 
@@ -71,19 +72,20 @@ Minimal app icon: a stylised lens over a 3D heart and lungs outline, teal and wh
 repository README so users can open it.
 
 ## 5. Test before sharing
-1. **Type `/help` in a new chat.** The reply must start with "🩺 MedLens v3 ready."
+1. **Type `/help` in a new chat.** The reply must start with "🩺 MedLens v4 ready."
    If not, the instructions were not pasted correctly — redo step 2 in **Configure**.
-2. Send a screenshot with `/medlens` → topic line with image count, anatomy + root cause +
-   starting point images (no posters), and a recommended next command.
-3. `/clinical` on a surgical topic (e.g. appendicitis) → Surgical pathway: pre-op,
-   operation steps, post-op. On a medical topic (e.g. hypertension) → OPD pathway with
-   which medicine and why. No doses inside images.
-4. `/exam` → MCQ/viva questions with answers at the end.
-5. `/redo 2 fewer labels` → only image 2 changes.
-6. Run `examples/test-cardiac-pain.md` and tick its pass criteria.
+2. Upload a screenshot with `/medlens` → topic line, then **generated sheets straight
+   away** (no text article, no web thumbnails), detailed and readable, and a recommended
+   next command.
+3. `/clinical` on a medical topic (e.g. hypertension) → OPD sheets with **drug cards**
+   (Use · How · Why · Side effects · Avoid in · Monitor). On a surgical topic (e.g.
+   appendicitis) → indications, pre-op, step-by-step operation, post-op.
+4. `/student` → notebook-style sheets, no doses. `/exam` → adds MCQ/viva questions.
+5. Zoom into each sheet: spelling correct, no logos, no duplicated sections.
+6. `/redo 2 less text` → only sheet 2 changes.
+7. Run `examples/test-cardiac-pain.md` and tick its pass criteria.
 
-If you used an older version: delete **all** old Knowledge files (including
-`image-sets.md` and `coverage-checklist.md`) before uploading the new ones.
+If you used an older version: delete **all** old Knowledge files before uploading the new ones.
 
 ## 6. Updating after feedback
 Edit the file in GitHub → re-upload **only the changed file(s)** in Knowledge (delete the old

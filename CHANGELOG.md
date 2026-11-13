@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.0.0 — 2026-11-13
+Rebuilt the visual style from the user's reference infographics; fixed "no images generated".
+- **Detailed infographic sheets** replace single-idea images: portrait 2:3 at the largest
+  size, title band, hero visual, 4–8 sections, tip box. Model decides how many sheets.
+- **7 layouts**: L1 atlas cross-section · L2 info rows · L3 step cards · L4 photo panel grid ·
+  L5 drug cards · L6 proforma dashboard · L7 study notebook (student/exam look).
+- **OPD drug cards** in `/clinical`: generic name · Use · How · **Why chosen** · Side effects ·
+  Avoid in · Monitor; guideline named; doses only in `/doctor` with "Verify with formulary".
+- **Images-first rule**: every command must generate sheets; never a text article; never
+  web search, web images or links.
+- **Text accuracy**: every word quoted in the prompt, readability limits, read-back after
+  each sheet with remake on misspellings/wrong facts; no logos, handles or brands.
+- Custom GPT setup: **Web Search off**. Quick install now pastes the instructions instead of
+  a GitHub link.
+- Claude mode builds sheets as HTML/SVG infographic sections; photo/3D heroes as prompts.
+- New sample run (hypertension OPD drug cards); test updated.
+
 ## 3.0.0 — 2026-11-06
 - **The model decides the number of images** per command from the topic; count shown on the
   topic line; `continue` resumes if the platform stops.

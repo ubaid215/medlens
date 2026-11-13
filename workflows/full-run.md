@@ -4,40 +4,39 @@ Same steps for `/medlens`, `/pathology`, `/tests` and `/clinical`.
 
 ## 1. Read (silent)
 - Read the whole screenshot: text, values with units, diagrams, labels.
-- Ignore names, IDs, dates of birth.
+- Ignore names, IDs, dates of birth. Never use web search or web images.
 - Unreadable or unclear → ask **one** short question and stop.
 
-## 2. Understand the topic (silent — do not show)
-- Name the topic and the main disease behind it (for anatomy-only pages, the disease the
-  concept explains).
+## 2. Understand the topic (silent)
+- Name the topic and the main disease behind it.
 - Copy levels, numbers and named structures exactly; keep separate statements separate.
-- Mode: the user's last mode command, else auto (textbook/slides → student;
+- Mode: the user's last mode command, else auto (slides/textbook → student;
   clinical notes/reports → doctor; leaflets → patient).
 - Emergency findings → first line "⚠️ Emergency — …".
-- For `/clinical`: decide **OPD**, **Surgical** or **both** (see
-  `knowledge/command-coverage.md`), unless the user forced one.
-- Remember what was already drawn in this chat (no repeats).
+- `/clinical`: decide **OPD**, **Surgical** or both, unless forced.
+- Remember which parts and hero visuals were already used in this chat.
 
-## 3. Decide the images
-- Go through the coverage list for the command in `knowledge/command-coverage.md`.
-- Keep every point that matters for this topic; drop points that don't apply.
-- One idea per image. Merge two tiny points into one image only if they share one picture;
-  split a crowded point into two images.
-- If a point's main picture was already drawn, choose a new angle, close-up or scene.
-- The count is whatever this gives — no fixed number.
+## 3. Plan the sheets (silent)
+- Take the sheet list for the command from `knowledge/command-coverage.md`.
+- Keep the sheets that matter for this topic; drop those that don't apply; split a part
+  into two sheets if it needs more than ~180 words or 8 sections (L1: 30 labels).
+- Pick the layout for each sheet (L1–L7; L7 look in `/student` and `/exam`).
+- Write the exact text for each sheet: title, section headings, lines, labels, tip box.
+- The number of sheets is whatever this gives.
 
-## 4. Make each image
-1. Build the prompt: opening line + matching template (`examples/image-prompt-templates.md`)
-   + style block. Labels in quotes, max 8.
-2. Generate one image.
-3. Check it: labels match the facts? one idea, not a poster? not a repeat? no doses?
-   Wrong → remake once with a simpler prompt. Still wrong → say what is wrong in its note.
-4. Write its note: "N. Title" + 2–4 bullets in the mode's wording.
-5. If the platform stops, wait; on `continue`, carry on from the next image.
+## 4. Make each sheet — images first
+1. Write the topic line, then generate **sheet 1 immediately** with the image tool.
+2. Prompt = opening line + layout template (`examples/image-prompt-templates.md`) with every
+   word in quotes + text rules/exclude line.
+3. **Read back** the generated sheet: every word spelled right, numbers and facts correct,
+   no duplicate sections, no impossible values, no logos.
+   Wrong → remake once with less text. Still wrong → name the error in its notes.
+4. Write its notes: "N. Title" + 2–4 bullets in the mode's wording; guideline name;
+   "➕ beyond source" where relevant; doses only per `knowledge/safety-rules.md`.
+5. Next sheet. If the platform stops, end with "Type continue for sheets N–M."
 
-## 5. Finish the reply
-- Exam mode: add "📝 Exam questions" (3–5 MCQ/viva) with answers at the end.
-- `/medlens`: recommended next command with a few words why.
-- Other commands: `👉 Next:` with the unused commands.
-- `/clinical`: end with the safety line.
-- Nothing else: no plans, tables, fact sheets or summaries.
+## 5. Finish
+- `/exam`: 3–5 MCQ/viva questions as text, answers at the end.
+- `/medlens`: recommended next command. Others: `👉 Next:` with unused commands.
+- `/clinical`: closing safety line.
+- Nothing else — no essays, tables or summaries in place of sheets.

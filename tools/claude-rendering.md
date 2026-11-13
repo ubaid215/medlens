@@ -1,66 +1,50 @@
 # Tool — Claude Mode (no built-in image generator)
 
-Claude cannot generate photorealistic images, but it **can draw** precise diagrams (SVG).
-Claude mode uses that: diagrams are drawn directly; 3D anatomy and realistic hospital scenes
-get a labelled sketch **plus** a ready-to-paste prompt for any image generator.
+Claude cannot generate photorealistic images, but it **can build** rich HTML/SVG
+infographic sheets with real, perfectly spelled text. Claude mode uses that: every sheet is
+built as an HTML section in the same layout as the image version; only the photorealistic
+hero visual (3D organ, clinical photo) becomes a ready-to-paste prompt.
 
 ## 1. When to use it
 
 | Situation | Renderer |
 |---|---|
-| Built-in image generation available (ChatGPT) | Generate images — `tools/image-generation.md` |
-| Claude with an image-generation tool connected | Draw diagrams as SVG; use the tool for 3D/realistic slots |
+| Built-in image generation available (ChatGPT) | Generate sheets — `tools/image-generation.md` |
+| Claude with an image-generation tool connected | Build sheets in HTML; generate hero visuals with the tool |
 | Claude without any image tool | **Claude mode** (this file) |
 
-Say once, under the topic line: `Claude mode — diagrams drawn, prompts for 3D/realistic images`.
+Say once, under the topic line: `Claude mode — sheets built as a page; prompts for 3D/photo visuals`.
 
-## 2. How each slot is rendered
+## 2. Layouts in HTML/SVG
 
-| Kind of image | Claude mode |
+| Layout | Claude mode build |
 |---|---|
-| 3D anatomy, root cause/starting point, healthy vs diseased, histology | Sketch + **prompt** (3D / micrograph) |
-| Clinical examination signs, operative steps, post-op ward | Sketch + **prompt** (realistic scene) |
-| Function, mechanism, disease process | **Draw** — flow arrows or numbered panels |
-| Symptoms, signs, complications | **Draw** — body map |
-| Causes & risk factors | **Draw** — hub-and-spoke |
-| ECG, labs, imaging findings | **Draw** — ECG strip / lab bars / imaging schematic |
-| Scores, diagnosis path, indications, pre-op workflow | **Draw** — flowchart / workflow |
-| Treatment ladder, medicine mechanism | **Draw** — ladder / mechanism diagram |
-| Follow-up, counselling | **Draw** — timeline / icon cards |
+| L1 Atlas cross-section | SVG outline sketch of the structure with numbered/coloured leader-line labels + **prompt** for the 3D render |
+| L2 Info rows | HTML rows: coloured icon tile, bold term, meaning column, summary box; small SVG organ |
+| L3 Step cards | Numbered pastel HTML cards with mini SVG diagrams (ECG strips, arrows) |
+| L4 Photo panel grid | HTML grid of panels with checklists and tip strips; each photo slot = **prompt** |
+| L5 Drug cards | Pastel HTML cards grouped by class: name, Use, How, Why, Side effects, Avoid in, Monitor (+ Dose in `/doctor` with "Verify with formulary"); tiny SVG mechanism icon |
+| L6 Proforma dashboard | Dark navy HTML panels lettered A, B, C… around an SVG organ outline |
+| L7 Study notebook | Paper-texture background, handwritten-style web-safe font, boxed "Study tips", "Memory trick", "Remember!" |
 
-Templates: `examples/svg-templates.md`.
+SVG building blocks: `examples/svg-templates.md`.
 
 ## 3. Output
 
 **Preferred — one HTML artifact "MedLens — [topic]"**
-- A heading per command (Anatomy & Origin, Pathology, Examination & Diagnosis, Clinical),
-  then one numbered section per image with the SVG and its notes.
-- Prompt slots add a box "🖼️ Realistic version — paste into any image generator" with the
+- Portrait-proportioned sheets (max-width ~800px), one `<section>` per sheet, numbered,
+  grouped under the command name; notes under each sheet.
+- Hero prompt slots: a box "🖼️ Realistic visual — paste into any image generator" with the
   prompt in a `<pre>` and a **Copy** button.
-- Each later command (`/pathology`, `/tests`, `/clinical`) **updates the same artifact**,
-  adding its sections, so the user ends with one study sheet.
-- Inline CSS, no external images, system fonts.
+- Each later command **updates the same artifact**, adding its sheets.
+- Inline CSS, no external images, system fonts; footer "MedLens · Educational use".
 
-**Fallback — no artifacts:** each diagram as an ```` ```svg ```` block with its notes; each
-prompt as a ```` ```text ```` block. Tell the user once to save SVG blocks as `.svg` files.
+**Fallback — no artifacts:** each sheet as an ```` ```html ```` or ```` ```svg ```` block;
+prompts as ```` ```text ```` blocks. Tell the user once how to save and open them.
 
-Chat text stays short: the topic line and the `👉 Next:` line. Notes live in the artifact.
+Chat text stays short: topic line and `👉 Next:` line.
 
-## 4. Drawing rules
-- Use the shapes and palette in `examples/svg-templates.md`
-  (normal `#2E9E5B`, disease `#D64545`, treatment `#2F6FD6`, warning `#E8892B`,
-  tests `#7B4FC9`, text `#1F2933`, lines `#52606D`, panel `#F5F7FA`).
-- Labels 1–4 words, max 8, font-size ≥ 16, never overlapping — labels at the edges with
-  leader lines.
-- Anatomy sketches: simplified but correct (sides, order of structures, direction of flow).
-- Title + footer "MedLens · Educational use"; `role="img"` and `<title>`.
-- No doses in diagrams.
-
-## 5. Prompt slots
-Use `examples/image-prompt-templates.md`. Present as:
-```
-🖼️ Image [#] — realistic version
-Paste into ChatGPT, Gemini, or any image generator:
-[full prompt]
-```
-Never claim an image was generated when only a prompt was given.
+## 4. Rules
+- Same coverage, readability limits, colours and safety as the image version.
+- Anatomy sketches simplified but correct (sides, order of structures, direction of flow).
+- Never claim an image was generated when only a prompt was given.

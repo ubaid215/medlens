@@ -1,10 +1,11 @@
 # MedLens 🩺
 
-**Medical screenshot → clear medical images, from anatomy to treatment.**
+**Medical screenshot → detailed, high-resolution medical infographic sheets, from anatomy to treatment.**
 
-Send a screenshot of a textbook page, lecture slide, clinical notes or a report. Type a
-command and MedLens makes as many clear images as the topic needs, one idea each, with
-short notes.
+Upload a screenshot of a textbook page, lecture slide, clinical notes or a report. Type a
+command and MedLens clarifies the topic with as many detailed, readable infographic sheets
+as it needs — 3D anatomy atlases, step cards, exam-technique photo panels, OPD drug cards
+and surgical step-by-step sheets.
 
 Built for **everyone in medicine**: students, doctors, exam candidates, nurses and patients. Runs inside ChatGPT with its built-in image
 generation — **no API key needed**.
@@ -21,12 +22,12 @@ generation — **no API key needed**.
 | `/medlens` | **Anatomy & origin** — structures, root cause, where the disease starts, first symptoms; recommends your next command |
 | `/pathology` | **The disease in depth** — causes, mechanism, gross & microscopic changes, types, complications |
 | `/tests` | **Clinical examination & diagnosis** — history, exam signs, labs, imaging, scores, differentials |
-| `/clinical` | **Management** — automatically **OPD** (which medicine, how it works, why) or **Surgical** (pre-op → operation → post-op). Force with `/clinical opd` or `/clinical surgical` |
-| `/student` `/doctor` `/exam` `/patient` | Choose the level of explanation (exam mode adds MCQs/viva questions) |
-| `/redo 2` | Remake image 2 (`/redo 2 bigger labels`) |
+| `/clinical` | **Management** — automatically **OPD** (drug cards: which drug, how it works, why chosen, side effects, avoid in, monitor + lifestyle & follow-up) or **Surgical** (pre-op → step-by-step operation → post-op). Force with `/clinical opd` or `/clinical surgical` |
+| `/student` `/doctor` `/exam` `/patient` | Choose the level; student/exam use a study-notebook look, exam adds MCQs/viva questions |
+| `/redo 2` | Remake sheet 2 (`/redo 2 less text`) |
 | `/help` | Command list |
 
-MedLens decides how many images each topic needs. If ChatGPT stops mid-way, type `continue`.
+MedLens decides how many sheets each topic needs. If ChatGPT stops mid-way, type `continue`.
 
 Start with `/medlens`; it tells you which command to use next. Add a focus if you like:
 `/clinical surgical laparoscopic`, `/pathology histology`.
@@ -38,11 +39,12 @@ Start with `/medlens`; it tells you which command to use next. Add a focus if yo
 ### Option A — Custom GPT (recommended)
 Follow [`setup/custom-gpt-setup.md`](setup/custom-gpt-setup.md): paste
 `instructions/gpt-instructions.md` into **Configure → Instructions**, upload the knowledge
-files, turn on **Image Generation**.
+files, turn on **Image Generation**, turn **Web Search off**.
 
-### Option B — Paste the GitHub link into a ChatGPT chat
-Use the prompt in [`setup/install-by-link.md`](setup/install-by-link.md). Works for that chat
-only and needs web access.
+### Option B — Try it in one ChatGPT chat
+Paste the instructions as your first message — see [`setup/install-by-link.md`](setup/install-by-link.md).
+Pasting a GitHub link is not recommended: it switches ChatGPT to web search, which gives
+text articles instead of sheets.
 
 ### Option C — Claude
 Zip the repository (`SKILL.md` inside the top folder) and upload it in
@@ -62,7 +64,7 @@ medlens/
 ├── knowledge/
 │   ├── command-coverage.md            what each command covers, OPD vs surgical
 │   ├── modes.md                       student / doctor / exam / patient
-│   ├── visual-style-guide.md          how images look
+│   ├── visual-style-guide.md          sheet layouts, readability, colours
 │   └── safety-rules.md                medical guardrails
 ├── workflows/
 │   ├── full-run.md                    steps for any command
@@ -71,7 +73,7 @@ medlens/
 │   ├── image-generation.md            built-in image tool rules
 │   └── claude-rendering.md            Claude mode
 ├── examples/
-│   ├── image-prompt-templates.md      prompt per image slot
+│   ├── image-prompt-templates.md      prompt per layout (L1–L7)
 │   ├── svg-templates.md               SVG diagrams for Claude mode
 │   ├── output-formats.md              exact reply format
 │   ├── sample-run.md                  worked example
