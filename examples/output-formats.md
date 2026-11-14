@@ -5,7 +5,9 @@ The sheets do the teaching. Text around them stays short.
 ## Welcome (first message, or `/help`) — use exactly
 
 ```
-🩺 MedLens v4 ready. Upload a medical screenshot, then:
+🩺 MedLens v4.1 ready. Upload a medical screenshot, then:
+/anatomy – pure gross anatomy atlas plate
+/visualize – one detailed overview poster of the topic
 /medlens – anatomy, root cause & where the disease starts
 /pathology – the disease in depth
 /tests – examination & diagnosis
@@ -20,7 +22,7 @@ If the welcome looks different, the GPT is not using MedLens instructions
 ## Reply
 
 ```
-🩺 [Topic] — [Anatomy & Origin | Pathology | Examination & Diagnosis | Clinical: OPD | Clinical: Surgical] · [N] sheets · [Student | Doctor | Exam | Patient]
+🩺 [Topic] — [Gross Anatomy | Overview | Anatomy & Origin | Pathology | Examination & Diagnosis | Clinical: OPD | Clinical: Surgical] · [N] sheets · [Student | Doctor | Exam | Patient]
 
 [generated sheet 1]
 1. [Sheet title]
@@ -50,6 +52,16 @@ Student/exam/patient: same notes **without** any dose.
 `/medlens`:
 ```
 👉 Next: /pathology — then /tests and /clinical (OPD pathway)
+```
+
+`/anatomy`:
+```
+👉 Next: /visualize for the full overview, or /medlens for root cause & disease origin
+```
+
+`/visualize`:
+```
+👉 Next: /pathology — to go deeper (then /tests, /clinical)
 ```
 
 `/clinical`:

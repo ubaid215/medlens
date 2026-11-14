@@ -25,14 +25,14 @@ Upload a medical screenshot — get detailed, high-resolution infographic sheets
 
 **Instructions**
 Paste the entire content of [`instructions/gpt-instructions.md`](../instructions/gpt-instructions.md)
-— from "You are MedLens v4" to the last line, nothing added, nothing summarised.
+— from "You are MedLens v4.1" to the last line, nothing added, nothing summarised.
 (It is under ChatGPT's 8,000-character limit.)
 
 **Conversation starters**
 ```
+/anatomy — detailed gross anatomy plate
+/visualize — full overview poster of my topic
 /medlens — anatomy, root cause & where the disease starts
-/pathology — the disease in depth
-/tests — examination & diagnosis
 /clinical — OPD drugs or surgery
 ```
 
@@ -46,6 +46,7 @@ workflows/full-run.md
 workflows/commands.md
 tools/image-generation.md
 examples/image-prompt-templates.md
+examples/master-prompts.md
 examples/output-formats.md
 examples/sample-run.md
 examples/test-cardiac-pain.md
@@ -72,11 +73,14 @@ Minimal app icon: a stylised lens over a 3D heart and lungs outline, teal and wh
 repository README so users can open it.
 
 ## 5. Test before sharing
-1. **Type `/help` in a new chat.** The reply must start with "🩺 MedLens v4 ready."
+1. **Type `/help` in a new chat.** The reply must start with "🩺 MedLens v4.1 ready."
    If not, the instructions were not pasted correctly — redo step 2 in **Configure**.
 2. Upload a screenshot with `/medlens` → topic line, then **generated sheets straight
    away** (no text article, no web thumbnails), detailed and readable, and a recommended
    next command.
+2b. `/anatomy` → one white atlas plate titled "DETAILED ANATOMY OF THE HUMAN …" with
+   20–30 correctly spelled labels, no disease content. `/visualize` → one dark-navy
+   poster with a central 3D hero and 6–10 info cards, no doses or lab values.
 3. `/clinical` on a medical topic (e.g. hypertension) → OPD sheets with **drug cards**
    (Use · How · Why · Side effects · Avoid in · Monitor). On a surgical topic (e.g.
    appendicitis) → indications, pre-op, step-by-step operation, post-op.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.1.0 — 2026-11-14
+- New **`/anatomy`**: one pure gross-anatomy atlas plate (white background, 3D cutaway,
+  20–30 leader-line labels, heading "DETAILED ANATOMY OF THE HUMAN [ORGAN]"); no disease content.
+- New **`/visualize`**: one comprehensive dark-navy overview poster — central 3D hero plus
+  6–10 info cards chosen for the topic's category.
+- Both take the topic from the uploaded screenshot (or typed after the command).
+- New `examples/master-prompts.md` holds the two full prompts (user-written), with added
+  exact label/card-text lists, read-back check, no doses/lab values, no logos.
+- Welcome text is now "MedLens v4.1 ready". Other commands unchanged.
+
 ## 4.0.0 — 2026-11-13
 Rebuilt the visual style from the user's reference infographics; fixed "no images generated".
 - **Detailed infographic sheets** replace single-idea images: portrait 2:3 at the largest

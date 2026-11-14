@@ -15,13 +15,15 @@ Use after any change. Source: textbook "Clinical Notes — Cardiac Pain" box.
 
 | Command | Must include |
 |---|---|
+| `/anatomy` | One white atlas plate "DETAILED ANATOMY OF THE HUMAN HEART": chambers, valves, coronary arteries, great vessels, cardiac plexus; 20–30 labels; no ischaemia or pain content |
+| `/visualize` | One navy poster "CARDIAC PAIN": hero = heart with cardiac nerves to T1–T4; cards: definition, cause (ischaemia), pain pathway, referred areas, inferior-wall MI → T7–T9 epigastrium, differentials (oesophagitis); no doses |
 | `/medlens` | L1 atlas sheet: heart, cardiac nerves, sympathetic trunk, T1–T4 roots; L3 pathway steps (ischaemia → metabolites → nerve endings → T1–T4 → dorsal horn convergence); L2 referred areas (chest, medial arm T2, neck, jaw) and inferior-wall MI → T7–T9 epigastrium. Next: `/pathology` (acute coronary syndrome) or `/tests` first |
 | `/pathology` | Risk factors; plaque → rupture → thrombus → ischaemia → infarction; healthy vs blocked artery + infarct histology; types (STEMI/NSTEMI/unstable angina); complications |
 | `/tests` | L6 chest-pain history & examination proforma; L4 examination photos; L3 ECG interpretation steps with ST-elevation example; L2 troponin and other tests; differentials (oesophagitis, PE, dissection) |
 | `/clinical` | Auto both: L3 plan; L5 drug cards (antiplatelets, anticoagulant, nitrate, beta-blocker, statin — each with Why); PCI step sheet; secondary prevention; "👉 Also available: …" |
 
 ## Pass criteria
-- [ ] `/help` shows the exact v4 welcome text
+- [ ] `/help` shows the exact v4.1 welcome text
 - [ ] **Every command generates sheets** — no text article, no web thumbnails or links
 - [ ] Topic line shows command, sheet count and mode
 - [ ] Sheets are portrait, detailed and readable (title band, 4–8 sections, tip box)

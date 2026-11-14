@@ -14,6 +14,30 @@ panel grid · **L5** drug cards · **L6** proforma dashboard · **L7** study not
 
 ---
 
+## `/anatomy` — Pure gross anatomy plate
+
+Topic = the organ/region in the screenshot (or typed after the command).
+- **One ultra-detailed atlas plate** using Prompt A in `examples/master-prompts.md`:
+  white background, heading "DETAILED ANATOMY OF THE HUMAN [ORGAN]", realistic 3D cutaway
+  with external + internal anatomy, layers, vessels, nerves and relations, 20–30 labels with
+  thin black leader lines (major → secondary → small).
+- More plates only when separate views are truly needed (anterior/posterior, external/
+  sectioned, blood & nerve supply).
+- **No disease, no treatment, no info cards.** Same look in every mode.
+- If the screenshot is about a disease, draw the normal anatomy of the organ involved.
+- End: `👉 Next: /visualize for the full overview, or /medlens for root cause & disease origin`.
+
+## `/visualize` — Detailed overview poster
+
+Topic = the organ, disease or medical topic in the screenshot (or typed).
+- **One comprehensive poster** using Prompt B in `examples/master-prompts.md`: deep
+  midnight-navy theme, central 3D hero with 6–12 labels, 6–10 info cards.
+- First identify the topic's category (anatomy, physiology, disease, examination/procedure,
+  pharmacology, surgery) and choose only the relevant cards (table in master-prompts.md).
+- No patient data, lab values or doses. Drug classes and first-line choices only.
+- It is the overview; the other commands go deeper. Same look in every mode.
+- End with the best deep-dive command for the topic.
+
 ## `/medlens` — Anatomy, root cause, where the disease starts
 
 | Sheet | Layout | Contents |

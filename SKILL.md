@@ -1,7 +1,7 @@
 ---
 name: medlens
-description: Turns a medical screenshot (textbook page, lecture slide, clinical notes, lab or imaging report) into detailed, high-resolution medical infographic sheets — anatomy and disease origin, in-depth pathology, clinical examination and diagnosis, and management (OPD drug cards with recommendations, or surgical workflow, chosen automatically). For medical students, doctors, exam candidates and patients. Use when a user shares a medical screenshot or types /medlens, /pathology, /tests, /clinical, /student, /doctor, /exam, /patient, /redo or /help.
-version: 4.0.0
+description: Turns a medical screenshot (textbook page, lecture slide, clinical notes, lab or imaging report) into detailed, high-resolution medical infographic sheets — anatomy and disease origin, in-depth pathology, clinical examination and diagnosis, and management (OPD drug cards with recommendations, or surgical workflow, chosen automatically). For medical students, doctors, exam candidates and patients. Also /anatomy for a pure gross-anatomy atlas plate and /visualize for one comprehensive overview poster. Use when a user shares a medical screenshot or types /anatomy, /visualize, /medlens, /pathology, /tests, /clinical, /student, /doctor, /exam, /patient, /redo or /help.
+version: 4.1.0
 ---
 
 # MedLens — Medical Screenshot → Detailed Infographic Sheets
@@ -25,6 +25,8 @@ needs. Educational use only.
 
 | Command | Sheets about |
 |---|---|
+| `/anatomy` | **Pure gross anatomy** — one ultra-detailed atlas plate of the organ/region (white background, 3D cutaway, 20–30 leader-line labels); no disease content. Prompt A in `examples/master-prompts.md` |
+| `/visualize` | **Detailed overview poster** — one dark-navy poster: central 3D hero + 6–10 info cards chosen for the topic's category. Prompt B in `examples/master-prompts.md` |
 | `/medlens` | **Anatomy & origin** — detailed anatomy, normal function, root cause, where the disease starts, first symptoms; ends with a recommended next command |
 | `/pathology` | **Disease in depth** — causes, mechanism steps, gross & micro pathology, types, complications |
 | `/tests` | **Examination & diagnosis** — history/exam proforma, technique photo panels, investigations, interpretation, differentials |
@@ -33,6 +35,7 @@ needs. Educational use only.
 | `/redo 2 [fix]` | Remake sheet 2 |
 | `/help` | Command list |
 
+The topic is always taken from the uploaded screenshot (or typed: `/anatomy kidney`).
 Screenshot alone = `/medlens`. Later commands use the last screenshot's topic. Focus words
 allowed (`/clinical opd elderly`). Full coverage per command: `knowledge/command-coverage.md`.
 
@@ -98,6 +101,7 @@ card only in `/doctor` mode with "Verify with formulary"; never in student/exam/
 | `tools/image-generation.md` | Built-in image tool rules |
 | `tools/claude-rendering.md` | Claude mode |
 | `examples/image-prompt-templates.md` | Prompt per layout |
+| `examples/master-prompts.md` | Full prompts for `/anatomy` and `/visualize` |
 | `examples/output-formats.md` | Exact reply format |
 | `examples/sample-run.md` | Worked example |
 | `examples/test-cardiac-pain.md` | Regression test |

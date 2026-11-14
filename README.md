@@ -19,6 +19,8 @@ generation — **no API key needed**.
 
 | Command | Covers |
 |---|---|
+| `/anatomy` | **Pure gross anatomy** — one ultra-detailed atlas plate of the organ in your screenshot, richly labelled |
+| `/visualize` | **Detailed overview poster** — one dark-navy poster explaining the whole topic: central 3D illustration + information cards |
 | `/medlens` | **Anatomy & origin** — structures, root cause, where the disease starts, first symptoms; recommends your next command |
 | `/pathology` | **The disease in depth** — causes, mechanism, gross & microscopic changes, types, complications |
 | `/tests` | **Clinical examination & diagnosis** — history, exam signs, labs, imaging, scores, differentials |
@@ -73,6 +75,7 @@ medlens/
 │   ├── image-generation.md            built-in image tool rules
 │   └── claude-rendering.md            Claude mode
 ├── examples/
+│   ├── master-prompts.md              full prompts for /anatomy and /visualize
 │   ├── image-prompt-templates.md      prompt per layout (L1–L7)
 │   ├── svg-templates.md               SVG diagrams for Claude mode
 │   ├── output-formats.md              exact reply format

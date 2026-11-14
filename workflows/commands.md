@@ -5,6 +5,8 @@ Accept with or without `/`, any capitalisation, and plain-English versions
 
 | Command | Behaviour |
 |---|---|
+| `/anatomy` | One pure gross-anatomy atlas plate of the organ/region in the screenshot (Prompt A). No disease content. |
+| `/visualize` | One detailed dark-navy overview poster of the topic (Prompt B): central 3D hero + info cards chosen for the topic. |
 | `/medlens` or screenshot alone | Anatomy & origin: structures, root cause, starting point, early spread, first symptoms, key point. Ends with a recommended next command. |
 | `/pathology` | The disease in depth (causes → mechanism → gross → micro → types/stages → complications → prognosis). |
 | `/tests` | Clinical examination & diagnosis (history → exam signs → bedside tests → labs → imaging → scores → differentials → diagnosis path). |
@@ -16,6 +18,8 @@ Accept with or without `/`, any capitalisation, and plain-English versions
 | `/help` | Show the welcome text. |
 
 ## Topic and focus
+- Every command takes its topic from the last uploaded screenshot; a topic may also be
+  typed after `/anatomy` or `/visualize` (`/anatomy kidney`, `/visualize asthma`).
 - `/pathology`, `/tests`, `/clinical` work on the last screenshot's topic.
   No screenshot yet → "Send a medical screenshot first."
 - Focus words narrow a command: `/pathology histology`, `/tests imaging`,
