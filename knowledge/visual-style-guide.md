@@ -82,5 +82,5 @@ Section colours stay consistent within one reply. Anatomy uses realistic tissue 
 
 Read every word visible in the generated sheet and compare with the prompt text:
 - any misspelling, invented word, wrong number, duplicated section, wrong level/side,
-  impossible value (e.g. "45 °C") → **remake the sheet** once with less text;
-- still wrong → name the error under the sheet.
+  impossible value (e.g. "45 °C") → **name the error under the sheet** and suggest `/redo N`.
+- Never remake automatically: each image uses the user's daily quota.

@@ -1,7 +1,11 @@
 # Command Coverage — which sheets each command makes
 
 Every command makes **infographic sheets** (see `knowledge/visual-style-guide.md`).
-**You decide how many sheets** — as many as the topic needs to be fully clarified. One sheet
+**You decide how many sheets** the topic needs for `/medlens`, `/pathology`, `/tests` and
+`/clinical`, and makes all of them in one reply — no fixed number. Only if the platform
+stops: "Type continue for sheets N–M."
+`/anatomy` and `/visualize` always make **exactly one image**. A command never makes sheets
+that belong to another command, and never makes two versions of the same sheet. One sheet
 covers one part of the topic with 4–8 sections; when a part has more than one sheet can hold
 readably, split it. Never pad, never cut an important point.
 
@@ -21,8 +25,10 @@ Topic = the organ/region in the screenshot (or typed after the command).
   white background, heading "DETAILED ANATOMY OF THE HUMAN [ORGAN]", realistic 3D cutaway
   with external + internal anatomy, layers, vessels, nerves and relations, 20–30 labels with
   thin black leader lines (major → secondary → small).
-- More plates only when separate views are truly needed (anterior/posterior, external/
-  sectioned, blood & nerve supply).
+- **Exactly one image.** Another view only when the user asks for it
+  (`/anatomy posterior view`, `/anatomy blood supply`).
+- Never pathway, pain-referral, symptom, dermatome or clinical posters — those belong to
+  `/medlens`, `/visualize` and the other commands.
 - **No disease, no treatment, no info cards.** Same look in every mode.
 - If the screenshot is about a disease, draw the normal anatomy of the organ involved.
 - End: `👉 Next: /visualize for the full overview, or /medlens for root cause & disease origin`.
@@ -30,7 +36,7 @@ Topic = the organ/region in the screenshot (or typed after the command).
 ## `/visualize` — Detailed overview poster
 
 Topic = the organ, disease or medical topic in the screenshot (or typed).
-- **One comprehensive poster** using Prompt B in `examples/master-prompts.md`: deep
+- **Exactly one poster** using Prompt B in `examples/master-prompts.md`: deep
   midnight-navy theme, central 3D hero with 6–12 labels, 6–10 info cards.
 - First identify the topic's category (anatomy, physiology, disease, examination/procedure,
   pharmacology, surgery) and choose only the relevant cards (table in master-prompts.md).
@@ -38,14 +44,37 @@ Topic = the organ, disease or medical topic in the screenshot (or typed).
 - It is the overview; the other commands go deeper. Same look in every mode.
 - End with the best deep-dive command for the topic.
 
-## `/medlens` — Anatomy, root cause, where the disease starts
+## `/medlens` — Explain the whole topic of the screenshot
+
+The main command. It must cover **everything the screenshot says**, in as many sheets as
+that takes — no fixed number.
+
+**Step 1 — concept list (silent).** Read the screenshot and list every concept it states,
+in its order (e.g. for a cardiac-pain page: cause of the pain → afferent pathway → entry
+into the cord at T1–T4 → referred skin areas → intercostobrachial nerve and medial arm →
+neck and jaw → inferior-wall MI and T7–T9 epigastrium → oesophagitis mimic).
+
+**Step 2 — one sheet per concept**, each a different part of the topic:
 
 | Sheet | Layout | Contents |
 |---|---|---|
-| Detailed anatomy | L1 | Every structure involved, 15–30 labels; relations, blood/nerve supply when relevant. Split into 2 sheets for complex regions (e.g. external + internal view) |
-| Normal function | L3 | How it works normally, 4–6 steps |
-| Root cause & starting point | L2 or L3 | Underlying cause(s); the exact site where the disease begins (shown on the organ); how it spreads; first changes |
-| First symptoms & key point | L2 | What the patient notices first and where; the screenshot's key clinical/exam point |
+| Detailed anatomy of the structures the source names | L1 | 15–30 labels; relations, blood/nerve supply when relevant. A second anatomy sheet for a second region the source names (e.g. heart **and** thoracic spinal nerves) |
+| Normal function | L3 | How it works normally, 4–6 steps — only if needed to understand the topic |
+| **Each concept from the list** | L2 / L3 / L1 as fits | The concept explained visually on the **exact organ or structure the source names** — never a generic organ picture |
+| Root cause & starting point | L2 or L3 | Underlying cause(s); the exact site where the disease begins; how it spreads |
+| First symptoms & key point | L2 | What the patient notices first and where; the source's key clinical/exam point |
+
+**Exact references (mandatory)**
+- Every organ, nerve, vessel, level and number named in the screenshot appears on a sheet,
+  labelled with the **same words and numbers** (e.g. "upper four thoracic nerves (T1–T4)",
+  "intercostobrachial nerve (T2)", "T7–T9").
+- Each structure is drawn in its real anatomical position and relations.
+- Never merge, round or "correct" the source's levels; separate statements stay separate.
+- Nothing stated in the screenshot may be left out; nothing may be shown twice.
+- Merge two small concepts into one sheet only if they share one picture.
+
+Does **not** include: in-depth pathology, examination, investigations or treatment — those
+are `/pathology`, `/tests` and `/clinical`.
 
 End with a **recommended next command** (see "Choosing the next command").
 

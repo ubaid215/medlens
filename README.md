@@ -21,7 +21,7 @@ generation — **no API key needed**.
 |---|---|
 | `/anatomy` | **Pure gross anatomy** — one ultra-detailed atlas plate of the organ in your screenshot, richly labelled |
 | `/visualize` | **Detailed overview poster** — one dark-navy poster explaining the whole topic: central 3D illustration + information cards |
-| `/medlens` | **Anatomy & origin** — structures, root cause, where the disease starts, first symptoms; recommends your next command |
+| `/medlens` | **Explains the whole topic** of your screenshot — every concept gets its own sheet with the exact organs and structures named, plus anatomy, root cause and where the disease starts; recommends your next command |
 | `/pathology` | **The disease in depth** — causes, mechanism, gross & microscopic changes, types, complications |
 | `/tests` | **Clinical examination & diagnosis** — history, exam signs, labs, imaging, scores, differentials |
 | `/clinical` | **Management** — automatically **OPD** (drug cards: which drug, how it works, why chosen, side effects, avoid in, monitor + lifestyle & follow-up) or **Surgical** (pre-op → step-by-step operation → post-op). Force with `/clinical opd` or `/clinical surgical` |
@@ -29,7 +29,11 @@ generation — **no API key needed**.
 | `/redo 2` | Remake sheet 2 (`/redo 2 less text`) |
 | `/help` | Command list |
 
-MedLens decides how many sheets each topic needs. If ChatGPT stops mid-way, type `continue`.
+`/anatomy` and `/visualize` make exactly one image each. For the other commands MedLens
+makes as many sheets as the topic needs, each covering a different part — `/medlens`
+explains everything in your screenshot with the exact organs and structures it names.
+If ChatGPT stops mid-way, type `continue`. Nothing is generated until you type a command, so your image quota is not
+wasted.
 
 Start with `/medlens`; it tells you which command to use next. Add a focus if you like:
 `/clinical surgical laparoscopic`, `/pathology histology`.

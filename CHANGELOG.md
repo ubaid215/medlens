@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.3.0 — 2026-11-14
+- **`/medlens` explains the whole topic of the screenshot**: it lists every concept the
+  source states and gives each its own sheet, showing the exact organs/structures, levels
+  and numbers the source names. Nothing in the source is left out.
+- **No fixed number of sheets** for `/medlens`, `/pathology`, `/tests`, `/clinical` (the
+  3-per-reply cap from 4.2 is removed); each sheet must be a different part.
+- Kept from 4.2: `/anatomy` and `/visualize` make exactly one image; each command stays in
+  its own scope; no variations or automatic remakes; a screenshot with no command
+  generates nothing.
+- Welcome text is now "MedLens v4.3 ready".
+
+## 4.2.0 — 2026-11-14
+Fix from a real test: `/anatomy` made 1 atlas plate plus 6 near-identical "Cardiac Pain"
+posters and used up the user's image quota.
+- **Strict scope**: each command makes only its own content. `/anatomy` = exactly one atlas
+  plate; `/visualize` = exactly one poster.
+- **Usage limits**: other commands send at most 3 sheets per reply, then
+  "Type continue for sheets N–M."
+- **No automatic remakes or variations**: errors are named under the sheet; the user decides
+  with `/redo N`.
+- **Screenshot with no command generates nothing** (it used to run `/medlens`).
+- Welcome text is now "MedLens v4.2 ready".
+
 ## 4.1.0 — 2026-11-14
 - New **`/anatomy`**: one pure gross-anatomy atlas plate (white background, 3D cutaway,
   20–30 leader-line labels, heading "DETAILED ANATOMY OF THE HUMAN [ORGAN]"); no disease content.

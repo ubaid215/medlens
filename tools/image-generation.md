@@ -19,12 +19,14 @@ generation). No external APIs, no API keys, **no web search, web images or links
 
 ## Read-back after each sheet
 Read every visible word and number. Misspelling, invented text, wrong number, duplicated
-section, impossible value or a logo → remake once with less text. Still wrong → say exactly
-what is wrong in the sheet's notes.
+section, impossible value or a logo → say exactly what is wrong in the sheet's notes and
+suggest `/redo N`. **Never remake automatically** — every image uses the user's quota.
 
 ## How many per reply
-The model decides from the topic (`knowledge/command-coverage.md`). If the platform stops
-before all sheets are done: "Type continue for sheets N–M." On `continue`, carry on.
+- `/anatomy` and `/visualize`: **exactly one image**.
+- Other commands: as many sheets as the topic needs, all in one reply, each a different
+  part. Only if the platform stops: "Type continue for sheets N–M." On `continue`, carry on.
+- One call per sheet. Never variations, alternatives or a second version of the same sheet.
 
 ## When generation fails or is refused
 - Never skip silently; say which sheet failed (reason if known).

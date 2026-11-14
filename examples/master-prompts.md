@@ -74,8 +74,9 @@ Small footer text: "MedLens · Educational use".
 
 **Rules for `/anatomy`**
 - Pure gross anatomy only — no disease, no treatment, no clinical boxes.
-- Usually **one plate**. Make more plates only when the region truly needs separate views
-  (e.g. anterior + posterior, external + sectioned, a second plate for blood/nerve supply).
+- **Exactly one image.** Another view only when the user asks
+  (`/anatomy posterior view`, `/anatomy blood supply`).
+- Never pathway, pain-referral, dermatome, symptom or clinical posters in `/anatomy`.
 - Labels: copy names exactly from the screenshot first, then add standard anatomical names.
   If more than 30 structures matter, split into a second plate instead of smaller text.
 - Notes under the plate: 2–4 bullets (orientation, what the section shows, one clinical
@@ -154,8 +155,7 @@ only relevant cards (never force irrelevant ones):
 | Surgery | Indications · Pre-op · Key steps · Post-op care · Complications |
 
 **Rules for `/visualize`**
-- **One poster** that gives the whole picture of the topic. A second poster only if the
-  screenshot clearly holds two separate topics.
+- **Exactly one poster** that gives the whole picture of the topic.
 - It is the overview; the deep-dive commands (`/medlens`, `/pathology`, `/tests`,
   `/clinical`) go further. Recommend the best one as the next step.
 - Management card names drug **classes and first-line choices only** — never doses.

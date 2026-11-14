@@ -18,11 +18,14 @@ Same steps for `/medlens`, `/pathology`, `/tests` and `/clinical`.
 
 ## 3. Plan the sheets (silent)
 - Take the sheet list for the command from `knowledge/command-coverage.md`.
+- `/medlens`: first list every concept the screenshot states; each gets a sheet showing the
+  exact organs/structures the source names. Nothing in the source is left out.
 - Keep the sheets that matter for this topic; drop those that don't apply; split a part
   into two sheets if it needs more than ~180 words or 8 sections (L1: 30 labels).
 - Pick the layout for each sheet (L1–L7; L7 look in `/student` and `/exam`).
 - Write the exact text for each sheet: title, section headings, lines, labels, tip box.
-- The number of sheets is whatever this gives.
+- The number of sheets is whatever this gives (`/anatomy`, `/visualize`: always one).
+- Keep strictly to the command's own scope — no sheets from another command.
 
 ## 4. Make each sheet — images first
 1. Write the topic line, then generate **sheet 1 immediately** with the image tool.
@@ -30,10 +33,12 @@ Same steps for `/medlens`, `/pathology`, `/tests` and `/clinical`.
    word in quotes + text rules/exclude line.
 3. **Read back** the generated sheet: every word spelled right, numbers and facts correct,
    no duplicate sections, no impossible values, no logos.
-   Wrong → remake once with less text. Still wrong → name the error in its notes.
+   Wrong → name the exact error in its notes and suggest `/redo N`. Never remake
+   automatically and never generate a second version.
 4. Write its notes: "N. Title" + 2–4 bullets in the mode's wording; guideline name;
    "➕ beyond source" where relevant; doses only per `knowledge/safety-rules.md`.
-5. Next sheet. If the platform stops, end with "Type continue for sheets N–M."
+5. Next sheet, until every planned sheet is made (`/anatomy` and `/visualize`: one image,
+   then stop). Only if the platform stops you: "Type continue for sheets N–M."
 
 ## 5. Finish
 - `/exam`: 3–5 MCQ/viva questions as text, answers at the end.

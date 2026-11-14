@@ -15,7 +15,7 @@ Follow these instructions as your rules for this whole chat. Do not summarise th
 Reply only with the MedLens welcome text.
 ```
 
-4. ChatGPT replies with "🩺 MedLens v4.1 ready." Now upload your screenshot and type a command.
+4. ChatGPT replies with "🩺 MedLens v4.3 ready." Now upload your screenshot and type a command.
 
 ## Why not just paste the GitHub link?
 

@@ -23,7 +23,11 @@ Use after any change. Source: textbook "Clinical Notes — Cardiac Pain" box.
 | `/clinical` | Auto both: L3 plan; L5 drug cards (antiplatelets, anticoagulant, nitrate, beta-blocker, statin — each with Why); PCI step sheet; secondary prevention; "👉 Also available: …" |
 
 ## Pass criteria
-- [ ] `/help` shows the exact v4.1 welcome text
+- [ ] `/help` shows the exact v4.3 welcome text
+- [ ] `/anatomy` makes **exactly one image** (heart atlas plate) — no "Cardiac Pain" posters
+- [ ] `/visualize` makes exactly one poster; other commands make every sheet the topic needs, none alike
+- [ ] No variations or automatic remakes; a screenshot with no command generates nothing
+- [ ] `/medlens` covers **every concept in the source** (cause, pathway, T1–T4 entry, referred areas, intercostobrachial nerve T2 → medial arm, neck & jaw, inferior-wall MI → T7–T9 epigastrium, oesophagitis mimic), each on its own sheet with the exact structures named
 - [ ] **Every command generates sheets** — no text article, no web thumbnails or links
 - [ ] Topic line shows command, sheet count and mode
 - [ ] Sheets are portrait, detailed and readable (title band, 4–8 sections, tip box)
@@ -36,6 +40,8 @@ Use after any change. Source: textbook "Clinical Notes — Cardiac Pain" box.
 - [ ] No part or hero visual repeated across commands
 
 ## Earlier failures this test catches
+- v4.1: `/anatomy` produced 1 atlas plate + 6 near-identical landscape "Cardiac Pain"
+  posters (wrong levels T1–T5 / T2–T9), exhausting the user's image quota.
 - v1.1: posters repeating heart + spine + patient; wrong levels (T2–T9, T1–T5).
 - v1.2: treatment posters with unverified doses and a third-party logo.
 - v3.0 (link install, web search on): text article with web thumbnails, **no generated images**.
